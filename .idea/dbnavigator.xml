@@ -14,6 +14,7 @@
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="9cd2db81-1abe-4b3f-bb34-bf8528eb11d4">
       <console name="Connection" type="STANDARD" schema="login" session="Main" />
+      <console name="MySQL Connection" type="STANDARD" schema="mysql" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -23,6 +24,11 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="9cd2db81-1abe-4b3f-bb34-bf8528eb11d4" dataset="try.users" active-filter-id="">
+      <filter id="cde6a8d5-dfd7-4183-97bd-49d276e684a5" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="user_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="9cd2db81-1abe-4b3f-bb34-bf8528eb11d4" dataset="login.login" active-filter-id="EMPTY_FILTER">
       <filter id="ebe65c76-809b-4de7-a9bf-cc76cbccf1d6" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="idlogin" operator="=" value="" active="true" />
@@ -54,7 +60,7 @@
           <database value="mysql" />
           <type value="USER_PASSWORD" />
           <user value="root" />
-          <deprecated-pwd value="TWhkemlrb29AMTIz" />
+          <deprecated-pwd value="UmFkd2FuMTIzNDU2" />
         </database>
         <properties>
           <auto-commit value="false" />

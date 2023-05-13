@@ -23,5 +23,6 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
+      <Button layoutX="395.0" layoutY="272.0" mnemonicParsing="false" onAction="#CreateForm" prefHeight="26.0" prefWidth="89.0" text="Sign up" />
    </children>
 </AnchorPane>
