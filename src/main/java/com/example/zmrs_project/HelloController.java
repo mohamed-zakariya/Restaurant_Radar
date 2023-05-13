@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -29,6 +30,7 @@ public class HelloController {
 
         Person p = Person.login(textField1.getText(), textField2.getText());
         if(p instanceof User){
+            System.out.println(((User) p).getVisitors());
             closeWindow.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
             Stage stage = new Stage();

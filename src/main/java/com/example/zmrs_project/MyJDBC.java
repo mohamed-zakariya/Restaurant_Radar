@@ -78,9 +78,10 @@ public class MyJDBC {
         try {
             c = this.getConnection();
             Statement st = c.createStatement();
-            rs = st.executeQuery("select count(*) from login");
+            rs = st.executeQuery("SELECT COUNT(userName) FROM login WHERE type = 1");
             while(rs.next()){
-                noOfUsers++;
+                String s = rs.getString("count(userName)");
+                noOfUsers = Integer.parseInt(s);
             }
         } catch (SQLException e) {
             e.printStackTrace();

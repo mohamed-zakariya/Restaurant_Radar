@@ -19,8 +19,8 @@ public class User extends Person{
     }
     public int getVisitors() throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = MyJDBC.getInstance();
-
-        return jdbc.noOfUsers();
+        visitors = jdbc.noOfUsers();
+        return visitors;
     }
 
     public String getEmail(){
