@@ -6,9 +6,9 @@ import java.sql.*;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/login";
+    String url = "jdbc:mysql://localhost:3306/try";
     String user = "root";
-    String password = "Mhdzikoo@123";
+    String password = "Radwan123456";
     private MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -33,17 +33,18 @@ public class MyJDBC {
         return connection;
     }
 
-    public void insertUser(String username, String password, String email) throws SQLException {
+    public void insertUser(String username, String password, String email ) throws SQLException {
         Connection c = null;
         PreparedStatement ps = null;
 
         try {
             c = this.getConnection();
-            ps = c.prepareStatement("insert into login (userName, password, email) values (?, ?, ?)");
+            ps = c.prepareStatement("insert into user (userName, password, email,type) values (?, ?, ?,?)");
 
             ps.setString(1, username);
             ps.setString(2, password);
             ps.setString(3, email);
+            ps.setString(4, "1");
 
             ps.executeUpdate();
         }finally {
@@ -60,7 +61,7 @@ public class MyJDBC {
         try {
             c = this.getConnection();
             Statement statement = c.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from login");
+            ResultSet resultSet = statement.executeQuery("select * from user");
             while(resultSet.next()){
                 if(resultSet.getString("userName").equals(username)){
                     return resultSet.getInt("type");
@@ -78,7 +79,7 @@ public class MyJDBC {
         try {
             c = this.getConnection();
             Statement st = c.createStatement();
-            rs = st.executeQuery("select count(*) from login");
+            rs = st.executeQuery("select count(*) from user");
             while(rs.next()){
                 noOfUsers++;
             }

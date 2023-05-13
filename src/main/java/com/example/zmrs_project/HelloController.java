@@ -49,4 +49,16 @@ public class HelloController {
             label1.setText("the Account is Not Exist");
         }
     }
+    @FXML
+    public void CreateForm(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("createuserForm.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        stage.setTitle("User!");
+        stage.setScene(scene);
+        stage.show();
+    }
 }

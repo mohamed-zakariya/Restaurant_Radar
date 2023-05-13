@@ -22,6 +22,13 @@ public class User extends Person{
 
         return jdbc.noOfUsers();
     }
+    public static User create(String username, String password,String email) throws SQLException, ClassNotFoundException {
+        MyJDBC jdbc = MyJDBC.getInstance();
+
+        jdbc.insertUser(username, password,email);
+
+            return new User(username, password,email);
+    }
 
     public String getEmail(){
         return email;
