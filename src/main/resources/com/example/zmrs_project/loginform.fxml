@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.Loginform">
+   <children>
+      
+      <TextField fx:id="textField1" layoutX="116.0" layoutY="157.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+      <Button layoutX="43.0" layoutY="328.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #7ec3f2;" text="Login" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Hyperlink layoutX="207.0" layoutY="385.0" onAction="#CreateForm" text="Create an account" textFill="#bc0000" />
+      <Label layoutX="157.0" layoutY="96.0" text="Login">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="label1" layoutX="143.0" layoutY="298.0" />
+      <Label layoutX="81.0" layoutY="387.0" text="Don't have an account?" />
+      <TextField fx:id="textField2" layoutX="116.0" layoutY="246.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+   </children>
+</AnchorPane>

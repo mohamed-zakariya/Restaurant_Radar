@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -13,7 +14,7 @@ import java.sql.SQLException;
 // controler form ro control create user form fxml
 public class CreateuserForm {
 
-
+    UserForm userForm;
     @FXML
     private TextField username_text;
     @FXML
@@ -21,6 +22,7 @@ public class CreateuserForm {
     @FXML
     private TextField email_text;
 
+    private Parent root;
 
     @FXML
     public void create1(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
@@ -29,9 +31,17 @@ public class CreateuserForm {
 
         closeWindow.close();
         User user1 = User.create(username_text.getText(), password_text.getText(),email_text.getText());
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
+        root = fxmlLoader.load();
+
+        UserForm userForm = fxmlLoader.getController();
+
+        userForm.setUser(user1);
+
+
         Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(root);
         stage.setTitle("User!");
         stage.setScene(scene);
         stage.show();

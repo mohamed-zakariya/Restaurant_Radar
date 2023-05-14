@@ -2,15 +2,18 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.CreateuserForm">
+<AnchorPane prefHeight="400.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.CreateuserForm">
    <children>
-      <Button layoutX="203.0" layoutY="305.0" mnemonicParsing="false" onAction="#create1" prefHeight="36.0" prefWidth="92.0" text="Create" />
-      <Label layoutX="51.0" layoutY="120.0" prefHeight="26.0" prefWidth="92.0" text="username" />
-      <TextField fx:id="username_text" layoutX="196.0" layoutY="121.0" />
-      <TextField fx:id="email_text" layoutX="196.0" layoutY="226.0" />
-      <TextField fx:id="password_text" layoutX="200.0" layoutY="170.0" prefHeight="26.0" prefWidth="141.0" />
-      <Label layoutX="58.0" layoutY="175.0" text="password" />
-      <Label layoutX="58.0" layoutY="230.0" text="e-mail" />
+      <Button layoutX="97.0" layoutY="300.0" mnemonicParsing="false" onAction="#create1" prefHeight="36.0" prefWidth="264.0" style="-fx-background-color: #7ec3f2;" text="Create" textFill="WHITE" />
+      <TextField fx:id="username_text" layoutX="151.0" layoutY="119.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="password_text" layoutX="151.0" layoutY="172.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="email_text" layoutX="150.0" layoutY="233.0" prefHeight="28.0" prefWidth="150.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+      <Label layoutX="136.0" layoutY="52.0" text="Create account">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

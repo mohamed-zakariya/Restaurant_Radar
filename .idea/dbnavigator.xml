@@ -24,6 +24,8 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="9cd2db81-1abe-4b3f-bb34-bf8528eb11d4" dataset="login.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9cd2db81-1abe-4b3f-bb34-bf8528eb11d4" dataset="login.resturant" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9cd2db81-1abe-4b3f-bb34-bf8528eb11d4" dataset="try.users" active-filter-id="">
       <filter id="cde6a8d5-dfd7-4183-97bd-49d276e684a5" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="user_id" operator="=" value="" active="true" />
@@ -60,7 +62,7 @@
           <database value="mysql" />
           <type value="USER_PASSWORD" />
           <user value="root" />
-          <deprecated-pwd value="UmFkd2FuMTIzNDU2" />
+          <deprecated-pwd value="TWhkemlrb29AMTIz" />
         </database>
         <properties>
           <auto-commit value="false" />

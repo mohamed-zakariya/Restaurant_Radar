@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.SubScene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -13,14 +13,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class HelloController {
+public class Loginform {
     @FXML
     private TextField textField1;
     @FXML
     private TextField textField2;
     @FXML
     Label label1;
-
+    private Parent root;
 
 
     @FXML
@@ -32,9 +32,16 @@ public class HelloController {
         if(p instanceof User){
             System.out.println(((User) p).getVisitors());
             closeWindow.close();
+
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
+            root = fxmlLoader.load();
+
+            UserForm userForm = fxmlLoader.getController();
+            User user1 = (User) p;
+            userForm.setUser(User.getData(user1.getUsername(), user1.getPassword()));
+
             Stage stage = new Stage();
-            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+            Scene scene = new Scene(root);
             stage.setTitle("User!");
             stage.setScene(scene);
             stage.show();
@@ -59,7 +66,7 @@ public class HelloController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("createuserForm.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("User!");
+        stage.setTitle("CreatUser!");
         stage.setScene(scene);
         stage.show();
     }

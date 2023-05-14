@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.zmrs_project.UserForm"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="438.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
+   <children>
+      <Label fx:id="label1" layoutX="23.0" layoutY="21.0" prefHeight="18.0" prefWidth="0.0">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></Label>
+      <Button layoutX="263.0" layoutY="124.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="146.0" text="Search">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="textfield1" alignment="CENTER" layoutX="216.0" layoutY="65.0" prefHeight="26.0" prefWidth="241.0" promptText="Location" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+      <ScrollPane layoutY="238.0" prefHeight="200.0" prefWidth="674.0">
+         <content>
+            <HBox fx:id="hbox1" prefHeight="198.0" prefWidth="664.0" spacing="25.0" />
+         </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>
