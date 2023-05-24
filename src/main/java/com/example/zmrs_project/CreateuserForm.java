@@ -36,9 +36,7 @@ public class CreateuserForm {
         root = fxmlLoader.load();
 
         UserForm userForm = fxmlLoader.getController();
-
         userForm.setUser(user1);
-
 
         Stage stage = new Stage();
         Scene scene = new Scene(root);

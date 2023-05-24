@@ -23,13 +23,18 @@ public class UserForm {
 
     private User user;
 
-
     @FXML
     TextField textfield1;
     @FXML
     Label label1;
     @FXML
+    Label label2;
+    @FXML
     HBox hbox1;
+    @FXML
+    AnchorPane anchorPane2;
+    @FXML
+    AnchorPane anchorPane1;
 
     public UserForm(){
 
@@ -37,6 +42,8 @@ public class UserForm {
     @FXML
     public void setUser(User user){
         this.user = user;
+        label1.setText("Hello " + user.getUsername());
+        label2.setText(user.getUsername());
     }
     @FXML
     public void search() throws SQLException, ClassNotFoundException, IOException {
@@ -62,6 +69,12 @@ public class UserForm {
         }
 
     }
+    @FXML
+    public void Home(){
+        if(!anchorPane1.getChildren().contains(anchorPane2))
+            anchorPane1.getChildren().add(anchorPane2);
+    }
+
 
 
 }

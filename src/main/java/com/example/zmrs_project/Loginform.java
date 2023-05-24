@@ -20,7 +20,7 @@ public class Loginform {
     private TextField textField2;
     @FXML
     Label label1;
-    private Parent root;
+    public Parent root;
 
 
     @FXML
@@ -48,8 +48,10 @@ public class Loginform {
         } else if (p instanceof Admin) {
             closeWindow.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminForm.fxml"));
+            root = fxmlLoader.load();
+
             Stage stage = new Stage();
-            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+            Scene scene = new Scene(root);
             stage.setTitle("Admin!");
             stage.setScene(scene);
             stage.show();
@@ -64,8 +66,9 @@ public class Loginform {
         Stage closeWindow = (Stage) n.getScene().getWindow();
         closeWindow.close();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("createuserForm.fxml"));
+        root = fxmlLoader.load();
         Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        Scene scene = new Scene(root);
         stage.setTitle("CreatUser!");
         stage.setScene(scene);
         stage.show();
