@@ -118,14 +118,14 @@ public class MyJDBC {
     }
     public Location searchLocation(String location){
         Connection c = null;
-        ArrayList<Resturant> resturants = new ArrayList<>();
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
         try{
             c = this.getConnection();
             Statement st = c.createStatement();
             ResultSet resultSet = st.executeQuery("select * from resturant");
             while (resultSet.next()){
                 if(resultSet.getString("location").equals(location)){
-                    resturants.add(new Resturant(resultSet.getString("resturantName"),
+                    restaurants.add(new Restaurant(resultSet.getString("resturantName"),
                             resultSet.getString("location"),
                             resultSet.getString("cusine")));
                 }
@@ -134,7 +134,7 @@ public class MyJDBC {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return new Location(location, resturants);
+        return new Location(location, restaurants);
     }
 
 }

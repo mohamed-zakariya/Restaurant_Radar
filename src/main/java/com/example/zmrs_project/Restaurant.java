@@ -1,13 +1,13 @@
 package com.example.zmrs_project;
 
-public class Resturant {
+public class Restaurant {
 
     private String resturantName;
     private String location;
     private String cusine;
     private Double avgReview;
 
-    public String getResturantName() {
+    public String getRestaurantName() {
         return resturantName;
     }
 
@@ -19,10 +19,10 @@ public class Resturant {
         return cusine;
     }
 
-    public Resturant(){
+    public Restaurant(){
 
     }
-    public Resturant(String resturantName, String location, String cusine){
+    public Restaurant(String resturantName, String location, String cusine){
         this.resturantName = resturantName;
         this.location = location;
         this.cusine = cusine;

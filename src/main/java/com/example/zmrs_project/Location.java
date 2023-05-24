@@ -7,18 +7,18 @@ public class Location {
 
     private String location;
 
-    public ArrayList<Resturant> resturants = new ArrayList<>();
+    public ArrayList<Restaurant> restaurants = new ArrayList<>();
 
-    public ArrayList<Resturant> getResturants() {
-        return resturants;
+    public ArrayList<Restaurant> getResturants() {
+        return restaurants;
     }
 
     public Location(){
 
     }
-    public Location(String location, ArrayList<Resturant> resturants){
+    public Location(String location, ArrayList<Restaurant> restaurants){
         this.location = location;
-        this.resturants = resturants;
+        this.restaurants = restaurants;
     }
 
     public static Location getResturantsLocation(String location) throws SQLException, ClassNotFoundException {
