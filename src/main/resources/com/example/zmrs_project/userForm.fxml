@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -12,46 +13,74 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane1" prefHeight="487.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
+<AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
    <children>
-      <AnchorPane fx:id="anchorPane2" layoutX="193.0" layoutY="-1.0" prefHeight="487.0" prefWidth="612.0">
+      <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0">
          <children>
-            <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: BLACK; -fx-background-radius: 5em; -fx-border-radius: 2em;" />
-            <FontAwesomeIconView glyphName="USER" layoutX="458.0" layoutY="42.0" size="25" />
-            <FontAwesomeIconView glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
-            <Label fx:id="label2" layoutX="482.0" layoutY="20.0" prefHeight="27.0" prefWidth="126.0">
-               <font>
-                  <Font name="System Italic" size="18.0" />
-               </font>
-            </Label>
-            <ScrollPane layoutX="-1.0" layoutY="221.0" prefHeight="266.0" prefWidth="612.0" stylesheets="@style.css">
+            <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: #faa443; -fx-background-radius: 10em; -fx-border-radius: 5em; -fx-background-color: white;" />
+            <FontAwesomeIconView fill="#faa443" glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
+            <ScrollPane hbarPolicy="ALWAYS" layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" vbarPolicy="ALWAYS">
                <content>
-                  <HBox fx:id="hbox1" alignment="CENTER" prefHeight="254.0" prefWidth="603.0" spacing="25.0" />
+                  <HBox fx:id="hbox1" alignment="CENTER" prefHeight="254.0" prefWidth="623.0" spacing="25.0" />
                </content>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </ScrollPane>
-         </children>
-      </AnchorPane>
-      <VBox prefHeight="487.0" prefWidth="212.0">
-         <children>
-            <Label fx:id="label1">
-               <VBox.margin>
-                  <Insets left="65.0" top="50.0" />
-               </VBox.margin>
+            <Label layoutX="58.0" layoutY="63.0" text="What would you eat today?">
                <font>
-                  <Font size="16.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <VBox alignment="CENTER" prefHeight="194.0" prefWidth="212.0">
+            <HBox layoutX="48.0" layoutY="93.0" prefHeight="131.0" prefWidth="586.0" spacing="15.0">
+               <children>
+                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="39.0" layoutY="81.0" text="friedChicken" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="54.0" layoutY="80.0" text="pizza" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="39.0" layoutY="81.0" text="hamBurger" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="46.0" layoutY="83.0" text="seafood" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <VBox prefHeight="505.0" prefWidth="212.0" style="-fx-background-color: white;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="212.0">
+               <children>
+                  <FontAwesomeIconView fill="#faa443" glyphName="USER" size="25" />
+                  <Label fx:id="label2" alignment="CENTER" prefHeight="27.0" prefWidth="126.0" textFill="#faa443">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="384.0" prefWidth="212.0">
                <VBox.margin>
-                  <Insets top="85.0" />
+                  <Insets />
                </VBox.margin>
                <children>
                   <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
                      <children>
-                        <FontAwesomeIconView glyphName="HOME" size="20">
+                        <FontAwesomeIconView fill="#faa443" glyphName="HOME" size="20">
                            <HBox.margin>
                               <Insets right="-5.0" />
                            </HBox.margin>
@@ -66,24 +95,14 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
-                     <children>
-                        <FontAwesomeIconView glyphName="HOME" size="20">
-                           <HBox.margin>
-                              <Insets right="-5.0" />
-                           </HBox.margin>
-                        </FontAwesomeIconView>
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="try">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
                </children>
             </VBox>
          </children>
       </VBox>
 
    </children>
+   <styleClass>
+      <String fx:value="scroll-bar" />
+      <String fx:value="button" />
+   </styleClass>
 </AnchorPane>

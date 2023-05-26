@@ -29,7 +29,6 @@ public class RestaurantForm {
 
         label1.setText(label1.getText() + restaurant.getRestaurantName());
         label2.setText(label2.getText() + restaurant.getLocation());
-        URL url = new URL("");
         Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);
     }

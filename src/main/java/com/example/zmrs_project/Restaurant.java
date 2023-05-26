@@ -53,7 +53,9 @@ public class Restaurant implements Cusine{
     }
 
     @Override
-    public ArrayList<Restaurant> DisplayCusineRestaurant(String cusine, String location) {
-        return null;
+    public ArrayList<Restaurant> DisplayCusineRestaurant(String cusine, String location) throws SQLException, ClassNotFoundException {
+        MyJDBC jdbc = new MyJDBC().getInstance();
+
+        return jdbc.getCusineRestaurant(cusine, location);
     }
 }

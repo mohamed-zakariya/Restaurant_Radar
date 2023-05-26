@@ -11,7 +11,7 @@ public class MyJDBC {
     String url = "jdbc:mysql://localhost:3306/login";
     String user = "root";
     String password = "Mhdzikoo@123";
-    private MyJDBC()throws SQLException{
+    MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, password);
@@ -205,18 +205,17 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
     }
-    public ArrayList<Restaurant> getCusineRestaurant(String cusine, String restaurantName){
+    public ArrayList<Restaurant> getCusineRestaurant(String cusine, String location){
         Connection c = null;
         Statement st = null;
-        Hashtable<String, Integer> hashtable = new Hashtable<>();
+
         ArrayList<Restaurant> restaurants = new ArrayList<>();
         try {
             c = this.getConnection();
             st = c.createStatement();
             ResultSet resultSet = st.executeQuery("select * from restaurant");
             while(resultSet.next()){
-                if(hashtable.get(resultSet.getString("restaurantName")) == 0){
-                    hashtable.put(resultSet.getString("restaurantName"), 1);
+                if(resultSet.getString("location").equals(location) && resultSet.getString("cusine").equals(cusine)){
                     restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
                             resultSet.getString("cusine")));
                 }
