@@ -1,14 +1,15 @@
 .button{
--fx-background-color:  #05071F;
--fx-text-fill: #e7e5e5;
+/*-fx-background-color:  #05071F;*/
+-fx-text-fill: #faa443;
  /* #2A73FF */
 }
-.button:hover{
--fx-background-color: #10165F;
-}
-.button:pressed{
--fx-background-color: #1620A1;
+.label{
+-fx-text-fill: #faa443;
 }
 .scroll-bar:horizontal, .scroll-bar:vertical{
--fx-background-color: transparent;
+-fx-color: #faa443;
+}
+.text-field{
+/*-fx-prompt-text-fill: #faa443;*/
+-fx-text-fill: black;
 }

@@ -19,8 +19,6 @@ public class UserForm {
     @FXML
     TextField textfield1;
     @FXML
-    Label label1;
-    @FXML
     Label label2;
     @FXML
     HBox hbox1;
@@ -35,7 +33,7 @@ public class UserForm {
     @FXML
     public void setUser(User user){
         this.user = user;
-        label1.setText("Hello " + user.getUsername());
+
         label2.setText(user.getUsername());
     }
     @FXML
@@ -49,7 +47,7 @@ public class UserForm {
         for(int i = 0; i < restaurants.size(); i++){
 
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("resturantForm.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("restaurantForm.fxml"));
 
             AnchorPane anchorPane = fxmlLoader.load();
 

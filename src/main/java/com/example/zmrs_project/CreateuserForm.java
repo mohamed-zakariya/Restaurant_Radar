@@ -30,7 +30,8 @@ public class CreateuserForm {
         Stage closeWindow = (Stage) n.getScene().getWindow();
 
         closeWindow.close();
-        User user1 = User.create(username_text.getText(), password_text.getText(),email_text.getText());
+        User user1 = new User();
+        user1 = user1.create(username_text.getText(), password_text.getText(),email_text.getText());
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
         root = fxmlLoader.load();
@@ -44,7 +45,6 @@ public class CreateuserForm {
         stage.setScene(scene);
         stage.show();
     }
-
 
 }
 

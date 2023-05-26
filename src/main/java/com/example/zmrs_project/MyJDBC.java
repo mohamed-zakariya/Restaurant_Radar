@@ -3,6 +3,7 @@ package com.example.zmrs_project;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class MyJDBC {
     private static MyJDBC jdbc;
@@ -10,7 +11,7 @@ public class MyJDBC {
     String url = "jdbc:mysql://localhost:3306/login";
     String user = "root";
     String password = "Mhdzikoo@123";
-    private MyJDBC()throws SQLException{
+    MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, password);
@@ -88,7 +89,7 @@ public class MyJDBC {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return new User(username, password, email);
+        return new User(username, password, email, this.getUserReviews(new User(username)));
     }
     public int noOfUsers() throws SQLException {
         Connection c = null;
@@ -122,12 +123,13 @@ public class MyJDBC {
         try{
             c = this.getConnection();
             Statement st = c.createStatement();
-            ResultSet resultSet = st.executeQuery("select * from resturant");
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
             while (resultSet.next()){
                 if(resultSet.getString("location").equals(location)){
-                    restaurants.add(new Restaurant(resultSet.getString("resturantName"),
+                    restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
                             resultSet.getString("location"),
-                            resultSet.getString("cusine")));
+                            resultSet.getString("cusine"),
+                            this.getRestaurantReviews(new Restaurant(resultSet.getString("restaurantName")))));
                 }
             }
 
@@ -135,6 +137,93 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
         return new Location(location, restaurants);
+    }
+    public ArrayList<Review> getUserReviews(User user){
+        Connection c = null;
+        ArrayList<Review> reviews = new ArrayList<>();
+        try{
+            c = this.getConnection();
+            Statement st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from review");
+            while (resultSet.next()){
+                if(resultSet.getString("userName").equals(user.getUsername()))
+                    reviews.add(new Review(user, resultSet.getDouble("rate"),
+                            new Restaurant(resultSet.getString("restaurantName"))));
+            }
+            return reviews;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public boolean addUserReview(String userName, String restaurantName, double rate) throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try {
+            c = this.getConnection();
+            Statement st = c.createStatement();
+            ResultSet resultSet1 = st.executeQuery("select * from review");
+            while(resultSet1.next()){
+                if(resultSet1.getString("userName").equals(userName)
+                        && resultSet1.getString("restaurantName").equals(restaurantName))
+                    return false;
+            }
+            ps = c.prepareStatement("insert into review (userName, restaurantName, rate) values (?, ?, ?)");
+
+            ps.setString(1, userName);
+            ps.setString(2, restaurantName);
+            ps.setDouble(3, rate);
+
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            if (ps != null){
+                ps.close();
+            }
+            if (c != null){
+                c.close();
+            }
+        }
+        return true;
+    }
+    public ArrayList<Review> getRestaurantReviews(Restaurant restaurant){
+        Connection c = null;
+        ArrayList<Review> reviews = new ArrayList<>();
+        try{
+            c = this.getConnection();
+            Statement st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from review");
+            while (resultSet.next()){
+                if(resultSet.getString("restaurantName").equals(restaurant.getRestaurantName()))
+                    reviews.add(new Review(new User(resultSet.getString("userName")),
+                            resultSet.getDouble("rate"),
+                            new Restaurant(resultSet.getString("restaurantName"))));
+            }
+            return reviews;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public ArrayList<Restaurant> getCusineRestaurant(String cusine, String location){
+        Connection c = null;
+        Statement st = null;
+
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        try {
+            c = this.getConnection();
+            st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
+            while(resultSet.next()){
+                if(resultSet.getString("location").equals(location) && resultSet.getString("cusine").equals(cusine)){
+                    restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
+                            resultSet.getString("cusine")));
+                }
+            }
+            return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
