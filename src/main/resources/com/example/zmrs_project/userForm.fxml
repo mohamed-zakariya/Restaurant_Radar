@@ -8,6 +8,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -41,6 +43,11 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <ImageView fitHeight="52.0" fitWidth="66.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/chicken.png" />
+                           </image>
+                        </ImageView>
                      </children>
                      <styleClass>
                         <String fx:value="label" />
@@ -54,6 +61,11 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <ImageView fx:id="imageView1" fitHeight="52.0" fitWidth="88.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/pizza.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
@@ -63,6 +75,11 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <ImageView fitHeight="52.0" fitWidth="88.0" layoutX="40.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/burger.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" styleClass="hyper-link" stylesheets="@style.css">
@@ -72,6 +89,11 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/fish.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>

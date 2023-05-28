@@ -12,7 +12,7 @@
             <Font name="System Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label2" layoutX="23.0" layoutY="209.0" text="Loation: " textFill="#363636">
+      <Label fx:id="label2" layoutX="23.0" layoutY="209.0" text="Location: " textFill="#363636">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>

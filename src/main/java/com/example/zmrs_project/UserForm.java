@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -33,6 +34,8 @@ public class UserForm {
     AnchorPane anchorPane2;
     @FXML
     AnchorPane anchorPane1;
+    @FXML
+    ImageView imageView1;
 
     public UserForm(){
 
@@ -60,6 +63,7 @@ public class UserForm {
 
             RestaurantForm restaurantForm = fxmlLoader.getController();
             restaurantForm.setRestaurant(restaurants.get(i));
+            restaurantForm.setLocation(textfield1.getText());
             restaurantForm.getRestaurantData();
 
 

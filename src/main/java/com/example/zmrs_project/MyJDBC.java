@@ -228,17 +228,19 @@ public class MyJDBC {
     public ArrayList<Restaurant> getCusinenooRestaurant(String cusine){
         Connection c = null;
         Statement st = null;
-
+        Hashtable<String, Integer> hashtable = new Hashtable<String, Integer>();
         ArrayList<Restaurant> restaurants = new ArrayList<>();
         try {
             c = this.getConnection();
             st = c.createStatement();
             ResultSet resultSet = st.executeQuery("select * from restaurant");
             while(resultSet.next()){
-                if(resultSet.getString("cusine").equals(cusine)){
+                if(resultSet.getString("cusine").equals(cusine) && (hashtable.get(resultSet.getString("restaurantName")) == null)){
                     restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
                             this.getRestaurantBranches(new Restaurant(resultSet.getString("restaurantName"))),
                             resultSet.getString("cusine")));
+
+                    hashtable.put(resultSet.getString("restaurantName"), 1);
                 }
             }
             return restaurants;

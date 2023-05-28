@@ -25,14 +25,18 @@ public class RestaurantForm {
     ImageView imageView1;
     @FXML
     ImageView imageView2;
+    String location = null;
     public void setRestaurant(Restaurant restaurant){
         this.restaurant = restaurant;
+    }
+    public void setLocation(String location){
+        this.location = location;
     }
 
     public void getRestaurantData() throws MalformedURLException {
 
         label1.setText(label1.getText() + restaurant.getRestaurantName());
-        label2.setText("");
+        label2.setText(label2.getText() + location);
         Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);
     }
