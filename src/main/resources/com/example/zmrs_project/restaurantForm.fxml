@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="226.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.RestaurantForm">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="226.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.RestaurantForm">
    <children>
       <Label fx:id="label1" layoutX="21.0" layoutY="36.0" text="Restaurant:" textFill="#201f1f">
          <font>
@@ -18,5 +18,10 @@
          </font>
       </Label>
       <ImageView fx:id="imageView1" fitHeight="115.0" fitWidth="200.0" layoutX="13.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="label3" layoutX="38.0" layoutY="108.0">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></Label>
+      <ImageView fx:id="imageView2" fitHeight="141.0" fitWidth="109.0" layoutX="114.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

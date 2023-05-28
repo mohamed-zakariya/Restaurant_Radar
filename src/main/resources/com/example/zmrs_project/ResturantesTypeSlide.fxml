@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.ResturantesTypeSlideForm">
+   <children>
+      <Label fx:id="label1" layoutX="199.0" layoutY="33.0" prefHeight="18.0" prefWidth="216.0" text="Label" />
+      <Label fx:id="label2" layoutX="367.0" layoutY="25.0" text="Label" />
+      <ScrollPane fx:id="slidePane" layoutX="152.0" layoutY="78.0" prefHeight="254.0" prefWidth="258.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="252.0" prefWidth="274.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

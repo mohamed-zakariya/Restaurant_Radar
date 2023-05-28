@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
+<AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
    <children>
       <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0">
          <children>
@@ -32,26 +27,26 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <HBox layoutX="48.0" layoutY="93.0" prefHeight="131.0" prefWidth="586.0" spacing="15.0">
+            <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="623.0" spacing="15.0">
                <children>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="39.0" layoutY="81.0" text="friedChicken" />
+                        <Hyperlink layoutX="26.0" layoutY="83.0" onAction="#OpenFriedChiken" text="Fried Chicken" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="54.0" layoutY="80.0" text="pizza" />
+                        <Hyperlink layoutX="50.0" layoutY="85.0" onAction="#OpenPizza" text="Pizza" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="39.0" layoutY="81.0" text="hamBurger" />
+                        <Hyperlink layoutX="38.0" layoutY="83.0" onAction="#OpenBurger" text="Burger" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="46.0" layoutY="83.0" text="seafood" />
+                        <Hyperlink layoutX="38.0" layoutY="78.0" onAction="#OpenSeaFood" text="Sea Food" />
                      </children>
                   </AnchorPane>
                </children>

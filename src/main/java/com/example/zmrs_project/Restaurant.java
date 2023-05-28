@@ -40,6 +40,11 @@ public class Restaurant implements Cusine{
         this.cusine = cusine;
         this.restaurantReviews = restaurantReviews;
     }
+    public Restaurant(String restaurantName, String location, String cusine){
+        this.restaurantName = restaurantName;
+        this.location = location;
+        this.cusine = cusine;
+    }
 
     public ArrayList<Review> getReviews() throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = MyJDBC.getInstance();
@@ -57,5 +62,11 @@ public class Restaurant implements Cusine{
         MyJDBC jdbc = new MyJDBC().getInstance();
 
         return jdbc.getCusineRestaurant(cusine, location);
+    }
+    // this the same as the above but only use it to the cusine only
+    public static ArrayList<Restaurant> DisplayCusineooRestaurant(String cusine) throws SQLException, ClassNotFoundException {
+        MyJDBC jdbc = new MyJDBC().getInstance();
+
+        return jdbc. getCusinenooRestaurant(cusine);
     }
 }

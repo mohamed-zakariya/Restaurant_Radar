@@ -8,9 +8,9 @@ import java.util.Hashtable;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/login";
+    String url = "jdbc:mysql://localhost:3306/try";
     String user = "root";
-    String password = "Mhdzikoo@123";
+    String password = "Radwan123456";
     MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -218,6 +218,26 @@ public class MyJDBC {
                 if(resultSet.getString("location").equals(location) && resultSet.getString("cusine").equals(cusine)){
                     restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
                             resultSet.getString("cusine")));
+                }
+            }
+            return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public ArrayList<Restaurant> getCusinenooRestaurant(String cusine){
+        Connection c = null;
+        Statement st = null;
+
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        try {
+            c = this.getConnection();
+            st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
+            while(resultSet.next()){
+                if(resultSet.getString("cusine").equals(cusine)){
+                    restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
+                            resultSet.getString("location"), resultSet.getString("cusine")));
                 }
             }
             return restaurants;
