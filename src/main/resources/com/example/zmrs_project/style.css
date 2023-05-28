@@ -6,10 +6,26 @@
 .label{
 -fx-text-fill: #faa443;
 }
-.scroll-bar:horizontal, .scroll-bar:vertical{
--fx-color: #faa443;
+.scroll-bar:vertical .thumb{
+-fx-background-color: linear-gradient(transparent,#faa443);
+-fx-border-radius: 6px;
+}
+.scroll-bar:horizontal .thumb{
+-fx-background-color: linear-gradient(transparent,#faa443);
+-fx-border-radius: 6px;
+}
+.scroll-bar:horizontal .thumb:hover, .scroll-bar:vertical .thumb:hover{
+/*-fx-background-color: black;*/
+
 }
 .text-field{
 /*-fx-prompt-text-fill: #faa443;*/
 -fx-text-fill: black;
+}
+.hyperlink{
+-fx-text-fill: #faa443;
+}
+.root{
+-fx-background-color: rgba(0, 0, 0, 0.9);
+-fx-background-radius: 10;
 }

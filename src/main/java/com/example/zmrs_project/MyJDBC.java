@@ -127,7 +127,7 @@ public class MyJDBC {
             while (resultSet.next()){
                 if(resultSet.getString("location").equals(location)){
                     restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
-                            resultSet.getString("location"),
+                           this.getRestaurantBranches(new Restaurant(resultSet.getString("restaurantName"))),
                             resultSet.getString("cusine"),
                             this.getRestaurantReviews(new Restaurant(resultSet.getString("restaurantName")))));
                 }
@@ -221,6 +221,45 @@ public class MyJDBC {
                 }
             }
             return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public ArrayList<Restaurant> getCusinenooRestaurant(String cusine){
+        Connection c = null;
+        Statement st = null;
+
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        try {
+            c = this.getConnection();
+            st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
+            while(resultSet.next()){
+                if(resultSet.getString("cusine").equals(cusine)){
+                    restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
+                            this.getRestaurantBranches(new Restaurant(resultSet.getString("restaurantName"))),
+                            resultSet.getString("cusine")));
+                }
+            }
+            return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public ArrayList<String> getRestaurantBranches(Restaurant restaurant){
+        Connection c = null;
+        Statement st = null;
+        ArrayList<String> branches = new ArrayList<>();
+        try {
+            c = this.getConnection();
+            st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
+            while (resultSet.next()){
+                if(resultSet.getString("restaurantName").equals(restaurant.getRestaurantName())){
+                    branches.add(resultSet.getString("location"));
+                }
+            }
+            return branches;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

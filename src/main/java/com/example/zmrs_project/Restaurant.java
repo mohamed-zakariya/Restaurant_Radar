@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Restaurant implements Cusine{
 
     private String restaurantName;
-    private String location;
+    private ArrayList<String> locations;
     private String cusine;
     private Double avgRate;
 
@@ -16,8 +16,12 @@ public class Restaurant implements Cusine{
         return restaurantName;
     }
 
-    public String getLocation() {
-        return location;
+    public ArrayList<String> getLocationsOfRestaurant() throws SQLException, ClassNotFoundException {
+        MyJDBC myJDBC = MyJDBC.getInstance();
+        return locations = myJDBC.getRestaurantBranches(this);
+    }
+    public ArrayList<String> getLocation(){
+        return locations;
     }
 
     public String getCusine() {
@@ -34,11 +38,16 @@ public class Restaurant implements Cusine{
         this.restaurantName = restaurantName;
         this.cusine = cusine;
     }
-    public Restaurant(String restaurantName, String location, String cusine, ArrayList<Review> restaurantReviews){
+    public Restaurant(String restaurantName, ArrayList<String> locations, String cusine, ArrayList<Review> restaurantReviews){
         this.restaurantName = restaurantName;
-        this.location = location;
+        this.locations = locations;
         this.cusine = cusine;
         this.restaurantReviews = restaurantReviews;
+    }
+    public Restaurant(String restaurantName, ArrayList<String> locations, String cusine){
+        this.restaurantName = restaurantName;
+        this.locations = locations;
+        this.cusine = cusine;
     }
 
     public ArrayList<Review> getReviews() throws SQLException, ClassNotFoundException {
@@ -57,5 +66,11 @@ public class Restaurant implements Cusine{
         MyJDBC jdbc = new MyJDBC().getInstance();
 
         return jdbc.getCusineRestaurant(cusine, location);
+    }
+    // this the same as the above but only use it to the cusine only
+    public static ArrayList<Restaurant> DisplayCusineooRestaurant(String cusine) throws SQLException, ClassNotFoundException {
+        MyJDBC jdbc = new MyJDBC().getInstance();
+
+        return jdbc. getCusinenooRestaurant(cusine);
     }
 }

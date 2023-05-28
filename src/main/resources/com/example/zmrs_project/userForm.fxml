@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -12,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
+<AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
    <children>
-      <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0">
+      <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0" stylesheets="@style.css">
          <children>
             <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: #faa443; -fx-background-radius: 10em; -fx-border-radius: 5em; -fx-background-color: white;" />
             <FontAwesomeIconView fill="#faa443" glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
-            <ScrollPane hbarPolicy="ALWAYS" layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" vbarPolicy="ALWAYS">
+            <ScrollPane hbarPolicy="ALWAYS" layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
                <content>
                   <HBox fx:id="hbox1" alignment="CENTER" prefHeight="254.0" prefWidth="623.0" spacing="25.0" />
                </content>
@@ -31,26 +32,46 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <HBox layoutX="48.0" layoutY="93.0" prefHeight="131.0" prefWidth="586.0" spacing="15.0">
+            <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="623.0" spacing="15.0">
                <children>
+                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" stylesheets="@style.css">
+                     <children>
+                        <Button layoutX="24.0" layoutY="83.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Fried Chicken">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="label" />
+                        <String fx:value="button" />
+                     </styleClass>
+                  </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="39.0" layoutY="81.0" text="friedChicken" />
+                        <Button layoutX="46.0" layoutY="78.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Pizza">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="54.0" layoutY="80.0" text="pizza" />
+                        <Button layoutX="42.0" layoutY="80.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Burger">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" styleClass="hyper-link" stylesheets="@style.css">
                      <children>
-                        <Label layoutX="39.0" layoutY="81.0" text="hamBurger" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
-                     <children>
-                        <Label layoutX="46.0" layoutY="83.0" text="seafood" />
+                        <Button layoutX="32.0" layoutY="80.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Sea Food">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>
@@ -84,7 +105,7 @@
                               <Insets right="-5.0" />
                            </HBox.margin>
                         </FontAwesomeIconView>
-                        <Button mnemonicParsing="false" onAction="#Home" style="-fx-background-color: transparent;" text="Home">
+                        <Button mnemonicParsing="false" onAction="#Home" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Home">
                            <font>
                               <Font size="16.0" />
                            </font>

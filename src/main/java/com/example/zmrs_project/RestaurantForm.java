@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.MalformedURLException;
+
 import java.net.URL;
 
 public class RestaurantForm {
@@ -19,8 +20,11 @@ public class RestaurantForm {
     Label label1;
     @FXML
     Label label2;
+
     @FXML
     ImageView imageView1;
+    @FXML
+    ImageView imageView2;
     public void setRestaurant(Restaurant restaurant){
         this.restaurant = restaurant;
     }
@@ -28,8 +32,17 @@ public class RestaurantForm {
     public void getRestaurantData() throws MalformedURLException {
 
         label1.setText(label1.getText() + restaurant.getRestaurantName());
-        label2.setText(label2.getText() + restaurant.getLocation());
+        label2.setText("");
         Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);
     }
+        public void getRestaurantSlideResturanet() throws MalformedURLException {
+        label1.setText(label1.getText() + restaurant.getRestaurantName());
+        label2.setText("Location:" + restaurant.getLocation());
+
+        Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
+        imageView1.setImage(image);
+    }
+
+
 }
