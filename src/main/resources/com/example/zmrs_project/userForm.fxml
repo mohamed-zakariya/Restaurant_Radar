@@ -11,30 +11,31 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
    <children>
-      <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0" stylesheets="@style.css">
+      <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0">
          <children>
             <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: #faa443; -fx-background-radius: 10em; -fx-border-radius: 5em; -fx-background-color: white;" />
             <FontAwesomeIconView fill="#faa443" glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
-            <ScrollPane hbarPolicy="ALWAYS" layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
-               <content>
-                  <HBox fx:id="hbox1" alignment="CENTER" prefHeight="254.0" prefWidth="623.0" spacing="25.0" />
-               </content>
+            <ScrollPane hbarPolicy="NEVER" layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" stylesheets="@style.css" vbarPolicy="ALWAYS">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <content>
+                  <FlowPane fx:id="flowPane1" prefHeight="250.0" prefWidth="617.0" />
+               </content>
             </ScrollPane>
-            <Label layoutX="58.0" layoutY="63.0" text="What would you eat today?">
+            <Label layoutX="58.0" layoutY="63.0" stylesheets="@style.css" text="What would you eat today?">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="623.0" spacing="15.0">
+            <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="623.0" spacing="15.0" stylesheets="@style.css">
                <children>
                   <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" stylesheets="@style.css">
                      <children>

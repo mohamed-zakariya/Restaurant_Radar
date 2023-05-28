@@ -3,6 +3,7 @@ package com.example.zmrs_project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,12 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.concurrent.Flow;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class UserForm {
@@ -36,6 +39,8 @@ public class UserForm {
     AnchorPane anchorPane1;
     @FXML
     ImageView imageView1;
+    @FXML
+    FlowPane flowPane1;
 
     public UserForm(){
 
@@ -48,12 +53,14 @@ public class UserForm {
     }
     @FXML
     public void search() throws SQLException, ClassNotFoundException, IOException {
-        hbox1.getChildren().clear();
+        flowPane1.getChildren().clear();
         Location location = Location.getResturantsLocation(textfield1.getText());
 
         ArrayList<Restaurant> restaurants = location.getResturants();
 
-
+        flowPane1.setHgap(10);
+        flowPane1.setVgap(10);
+        flowPane1.setAlignment(Pos.CENTER);
         for(int i = 0; i < restaurants.size(); i++){
 
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -67,7 +74,7 @@ public class UserForm {
             restaurantForm.getRestaurantData();
 
 
-            hbox1.getChildren().add(anchorPane);
+            flowPane1.getChildren().add(anchorPane);
         }
 
     }

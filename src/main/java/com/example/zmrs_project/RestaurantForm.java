@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import java.net.MalformedURLException;
 
 import java.net.URL;
+import java.sql.SQLException;
 
 public class RestaurantForm {
 
@@ -40,9 +41,15 @@ public class RestaurantForm {
         Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);
     }
-        public void getRestaurantSlideResturanet() throws MalformedURLException {
+        public void getRestaurantSlideResturanet() throws MalformedURLException, SQLException, ClassNotFoundException {
+        anchorPane.setPrefHeight(310);
+        anchorPane.setPrefWidth(297);
+        imageView1.setFitWidth(277);
+        imageView1.setFitHeight(179);
+
+        label2.setLayoutY(280);
         label1.setText(label1.getText() + restaurant.getRestaurantName());
-        label2.setText("Location:" + restaurant.getLocation());
+        label2.setText("Location:" + restaurant.getLocationsOfRestaurant());
 
         Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);

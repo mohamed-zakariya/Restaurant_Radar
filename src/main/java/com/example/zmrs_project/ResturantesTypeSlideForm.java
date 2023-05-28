@@ -25,8 +25,9 @@ public class ResturantesTypeSlideForm {
     @FXML
     public ScrollPane slidePane;
 
+
     @FXML
-    public VBox vbox;
+    public FlowPane flowPane;
     @FXML
     AnchorPane anchorPane1;
     public ArrayList <Restaurant> restaurants;
@@ -47,8 +48,9 @@ public class ResturantesTypeSlideForm {
             if (!restaurants.isEmpty()) {
 
                 // Create a VBox to hold the restaurant slides
-                vbox.setSpacing(10);
-                vbox.setAlignment(Pos.CENTER);
+                flowPane.setVgap(10);
+                flowPane.setHgap(10);
+                flowPane.setAlignment(Pos.CENTER);
                 for (int i = 0; i < restaurants.size(); i++) {
 
 
@@ -61,13 +63,13 @@ public class ResturantesTypeSlideForm {
                     restaurantForm.setRestaurant(restaurants.get(i));
                     restaurantForm.getRestaurantSlideResturanet();
 
-                    vbox.getChildren().add(anchorPane);
+                    flowPane.getChildren().add(anchorPane);
                     //slidePane.setContent(vbox);
                 }
 
 //                ScrollPane scrollPane = new ScrollPane(); // Wrap the VBox in a ScrollPane
 //                scrollPane.setFitToWidth(true); // Enable horizontal scrolling
-                slidePane.setContent(vbox);
+                slidePane.setContent(flowPane);
 
 
             } else {

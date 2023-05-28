@@ -5,18 +5,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="226.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.RestaurantForm">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="232.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.RestaurantForm">
    <children>
       <Label fx:id="label1" layoutX="20.0" layoutY="21.0" text="Restaurant:" textFill="#201f1f">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="label2" layoutX="23.0" layoutY="209.0" text="Location: " textFill="#363636">
+      <Label fx:id="label2" layoutX="23.0" layoutY="222.0" text="Location: " textFill="#363636">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imageView1" fitHeight="141.0" fitWidth="184.0" layoutX="23.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView1" fitHeight="141.0" fitWidth="184.0" layoutX="14.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
