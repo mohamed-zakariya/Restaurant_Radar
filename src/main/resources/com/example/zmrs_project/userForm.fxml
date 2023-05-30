@@ -22,12 +22,23 @@
          <children>
             <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: #faa443; -fx-background-radius: 10em; -fx-border-radius: 5em; -fx-background-color: white;" />
             <FontAwesomeIconView fill="#faa443" glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
-            <ScrollPane hbarPolicy="NEVER" layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" stylesheets="@style.css" vbarPolicy="ALWAYS">
+            <ScrollPane layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" stylesheets="@style.css">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <content>
-                  <FlowPane fx:id="flowPane1" prefHeight="250.0" prefWidth="617.0" />
+                  <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="263.0" prefWidth="632.0">
+                     <children>
+                        <ImageView fx:id="imageView1" fitHeight="263.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/1.jpg" />
+                           </image>
+                           <FlowPane.margin>
+                              <Insets left="160.0" />
+                           </FlowPane.margin>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
                </content>
             </ScrollPane>
             <Label layoutX="58.0" layoutY="63.0" stylesheets="@style.css" text="What would you eat today?">
@@ -62,7 +73,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <ImageView fx:id="imageView1" fitHeight="52.0" fitWidth="88.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="52.0" fitWidth="88.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/pizza.jpg" />
                            </image>
@@ -129,6 +140,23 @@
                            </HBox.margin>
                         </FontAwesomeIconView>
                         <Button mnemonicParsing="false" onAction="#Home" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Home">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
+                     <children>
+                        <FontAwesomeIconView fill="#faa443" glyphName="SIGN_OUT" size="20">
+                           <HBox.margin>
+                              <Insets right="-5.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <Button mnemonicParsing="false" onAction="#returnBack" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Signout">
                            <font>
                               <Font size="16.0" />
                            </font>

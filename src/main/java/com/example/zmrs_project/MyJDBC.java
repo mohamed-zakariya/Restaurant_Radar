@@ -190,6 +190,7 @@ public class MyJDBC {
     public ArrayList<Review> getRestaurantReviews(Restaurant restaurant){
         Connection c = null;
         ArrayList<Review> reviews = new ArrayList<>();
+
         try{
             c = this.getConnection();
             Statement st = c.createStatement();

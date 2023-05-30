@@ -71,6 +71,7 @@ public class Loginform {
         Scene scene = new Scene(root);
         stage.setTitle("CreatUser!");
         stage.setScene(scene);
+        stage.setTitle("Hello!");
         stage.show();
     }
 }

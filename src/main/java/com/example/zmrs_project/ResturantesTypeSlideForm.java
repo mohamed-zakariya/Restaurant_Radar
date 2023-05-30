@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -17,14 +18,12 @@ import java.util.ArrayList;
 public class ResturantesTypeSlideForm {
 
     @FXML
-    Label label1;
-
+    public Parent root;
     @FXML
-    Label label2;
+    Label label1, label2;
 
     @FXML
     public ScrollPane slidePane;
-
 
     @FXML
     public FlowPane flowPane;
@@ -61,7 +60,7 @@ public class ResturantesTypeSlideForm {
 
                     RestaurantForm restaurantForm = fxmlLoader.getController();
                     restaurantForm.setRestaurant(restaurants.get(i));
-                    restaurantForm.getRestaurantSlideResturanet();
+                    restaurantForm.getRestaurantSlideRestaurant();
 
                     flowPane.getChildren().add(anchorPane);
                     //slidePane.setContent(vbox);
@@ -84,6 +83,22 @@ public class ResturantesTypeSlideForm {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    public void returnBack(ActionEvent actionEvent) throws IOException {
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
+        root = fxmlLoader.load();
+
+        UserForm userForm = fxmlLoader.getController();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 

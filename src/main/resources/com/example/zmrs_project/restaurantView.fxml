@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.RestaurantView">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="739.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="39.0" layoutY="34.0" opacity="0.94" prefHeight="526.0" prefWidth="521.0" style="-fx-background-color: #3B3131; -fx-background-radius: 50;">
+         <children>
+            <Label fx:id="label1" layoutX="178.0" layoutY="38.0" text="Restaurant: " textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="68.0" layoutY="333.0" text="PhoneNumber:" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageView" fitHeight="189.0" fitWidth="283.0" layoutX="118.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Restaurants/Burger%20King.jpg" />
+               </image>
+            </ImageView>
+            <Rating fx:id="rating" layoutX="168.0" layoutY="373.0" rating="0.0">
+               <effect>
+                  <Glow />
+               </effect>
+            </Rating>
+            <Label layoutX="67.0" layoutY="375.0" text="Rating:" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="231.0" layoutY="419.0" mnemonicParsing="false" onAction="#doRate" text="submit" textFill="#3b3131">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="243.0" layoutY="452.0" text="Label" textFill="#e44d4d" />
+            <Label fx:id="label2" layoutX="220.0" layoutY="275.0" prefHeight="35.0" prefWidth="36.0" text="3.5" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fill="#f2c226" glyphName="STAR" layoutX="259.0" layoutY="301.0" size="30" />
+            <Label fx:id="label3" layoutX="239.0" layoutY="309.0" text="reviews" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button layoutX="32.0" layoutY="5.0" mnemonicParsing="false" onAction="#returnBack" opacity="0.0" prefHeight="26.0" prefWidth="36.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <FontAwesomeIconView disable="true" fill="#3b3131" glyphName="ARROW_LEFT" layoutX="43.0" layoutY="25.0" size="20" />
+   </children>
+</AnchorPane>

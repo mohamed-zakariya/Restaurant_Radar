@@ -8,9 +8,9 @@ public class Restaurant implements Cusine{
     private String restaurantName;
     private ArrayList<String> locations;
     private String cusine;
-    private Double avgRate;
+    private Double avgRate = (double) 0;
 
-    private ArrayList<Review> restaurantReviews;
+    private static ArrayList<Review> restaurantReviews;
 
     public String getRestaurantName() {
         return restaurantName;
@@ -50,14 +50,18 @@ public class Restaurant implements Cusine{
         this.cusine = cusine;
     }
 
-    public ArrayList<Review> getReviews() throws SQLException, ClassNotFoundException {
+    public static ArrayList<Review> getReviews(Restaurant restaurant) throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = MyJDBC.getInstance();
-        return restaurantReviews = jdbc.getRestaurantReviews(this);
+
+        return restaurantReviews = jdbc.getRestaurantReviews(restaurant);
     }
     public double getAvgReviews(){
+        avgRate = 0.0;
         for(int i = 0; i < restaurantReviews.size(); i++){
+
             avgRate += restaurantReviews.get(i).getRate();
         }
+        avgRate /= restaurantReviews.size();
         return  avgRate;
     }
 
