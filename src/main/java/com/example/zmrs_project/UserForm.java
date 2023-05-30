@@ -75,6 +75,7 @@ public class UserForm {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 RestaurantForm restaurantForm = fxmlLoader.getController();
+                restaurantForm.setUser(user);
                 restaurantForm.setRestaurant(restaurants.get(i));
                 restaurantForm.setLocation(textfield1.getText());
                 restaurantForm.getRestaurantData();
@@ -107,6 +108,7 @@ public class UserForm {
         // its to connect the slide form with the method
         ResturantesTypeSlideForm resturantesTypeSlideForm = fxmlLoader.getController();
 
+        resturantesTypeSlideForm.setUser(user);
         resturantesTypeSlideForm.setCusinee(buttontext);
         resturantesTypeSlideForm.getdataslide(buttontext);
 

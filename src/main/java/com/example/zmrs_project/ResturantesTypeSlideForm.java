@@ -31,6 +31,7 @@ public class ResturantesTypeSlideForm {
     AnchorPane anchorPane1;
     public ArrayList <Restaurant> restaurants;
     public String cusine;
+    private User user;
 
     public ResturantesTypeSlideForm(){
     }
@@ -39,7 +40,9 @@ public class ResturantesTypeSlideForm {
         this.cusine =cusine;
         label1.setText(cusine+" Restaurants");
     }
-
+    public void setUser(User user){
+        this.user = user;
+    }
     public void getdataslide(String cusine) throws SQLException, ClassNotFoundException {
      //resturantes to add them to the array of resurantes of  cusine
         try {
@@ -59,6 +62,7 @@ public class ResturantesTypeSlideForm {
                    AnchorPane anchorPane = fxmlLoader.load();
 
                     RestaurantForm restaurantForm = fxmlLoader.getController();
+                    restaurantForm.setUser(user);
                     restaurantForm.setRestaurant(restaurants.get(i));
                     restaurantForm.getRestaurantSlideRestaurant();
 
@@ -94,6 +98,7 @@ public class ResturantesTypeSlideForm {
         root = fxmlLoader.load();
 
         UserForm userForm = fxmlLoader.getController();
+        userForm.setUser(user);
 
         Stage stage = new Stage();
         Scene scene = new Scene(root);

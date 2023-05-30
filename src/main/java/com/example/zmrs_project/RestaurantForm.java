@@ -24,7 +24,7 @@ public class RestaurantForm {
     @FXML
     AnchorPane anchorPane, anchorPane2;
     private Restaurant restaurant;
-
+    private User user;
     @FXML
     Label label1, label2;
 
@@ -40,6 +40,7 @@ public class RestaurantForm {
     public void setRestaurant(Restaurant restaurant){
         this.restaurant = restaurant;
     }
+    public void setUser(User user){this.user = user;}
     public void setLocation(String location){
         this.location = location;
     }
@@ -77,6 +78,7 @@ public class RestaurantForm {
         root = fxmlLoader.load();
 
         RestaurantView restaurantView = fxmlLoader.getController();
+        restaurantView.setUser(user);
         restaurantView.setRestaurant(restaurant);
         restaurantView.showData();
 

@@ -49,17 +49,21 @@ public class Restaurant implements Cusine{
         this.locations = locations;
         this.cusine = cusine;
     }
+    public  void setReview(){
+
+    }
 
     public static ArrayList<Review> getReviews(Restaurant restaurant) throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = MyJDBC.getInstance();
 
         return restaurantReviews = jdbc.getRestaurantReviews(restaurant);
     }
-    public double getAvgReviews(){
+    public double getAvgReviews() throws SQLException, ClassNotFoundException {
         avgRate = 0.0;
+        restaurantReviews = this.getReviews(this);
         for(int i = 0; i < restaurantReviews.size(); i++){
 
-            avgRate += restaurantReviews.get(i).getRate();
+            avgRate += restaurantReviews.get(i).getRate(restaurantReviews.get(i).getUser(), restaurantReviews.get(i).getRestaurant());
         }
         avgRate /= restaurantReviews.size();
         return  avgRate;

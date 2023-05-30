@@ -50,7 +50,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label layoutX="243.0" layoutY="452.0" text="Label" textFill="#e44d4d" />
+            <Label fx:id="label4" layoutX="234.0" layoutY="452.0" textFill="#e44d4d" />
             <Label fx:id="label2" layoutX="220.0" layoutY="275.0" prefHeight="35.0" prefWidth="36.0" text="3.5" textFill="WHITE">
                <font>
                   <Font size="24.0" />

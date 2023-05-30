@@ -21,19 +21,23 @@ public class RestaurantView {
     @FXML
     Rating rating;
     @FXML
-    Label label1, label2, label3;
+    Label label1, label2, label3, label4;
     @FXML
     ImageView imageView;
     @FXML
     public Parent root;
     private Restaurant restaurant;
+    private User user;
     private Review review;
 
     public void setRestaurant(Restaurant restaurant){
         this.restaurant = restaurant;
     }
+    public void setUser(User user){ this.user = user;}
 
     public void showData() throws SQLException, ClassNotFoundException {
+        review = new Review(user, restaurant);
+        rating.setRating(review.getRate(user, restaurant));
         label1.setText(label1.getText() + restaurant.getRestaurantName());
         label3.setText(Restaurant.getReviews(restaurant).size()+" reviews");
         if(Restaurant.getReviews(restaurant).size() == 0){
@@ -46,8 +50,19 @@ public class RestaurantView {
 
     }
     @FXML
-    public void doRate(ActionEvent actionEvent){
-        rating.getRating();
+    public void doRate(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        boolean check = review.setRate(user, rating.getRating(), restaurant);
+        double value = review.getRate(user, restaurant);
+
+        if(check == true){
+            review.setRate(user, rating.getRating(), restaurant);
+            rating.setRating(value);
+            label2.setText(String.format("%.1f",restaurant.getAvgReviews()));
+            label3.setText(Restaurant.getReviews(restaurant).size()+" reviews");
+        }
+        else{
+            label4.setText("you're already reviewed!");
+        }
     }
 
     @FXML
@@ -60,7 +75,7 @@ public class RestaurantView {
         root = fxmlLoader.load();
 
         UserForm userForm = fxmlLoader.getController();
-
+        userForm.setUser(user);
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);

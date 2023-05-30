@@ -20,6 +20,7 @@ public class User extends Person{
     public User(String username, String password) throws SQLException, ClassNotFoundException {
         super(username, password);
         MyJDBC jdbc = MyJDBC.getInstance();
+        jdbc.getUsersData(username, password);
     }
     public User(String username, String password, String email, ArrayList<Review> userReviews) throws SQLException {
         super(username, password);

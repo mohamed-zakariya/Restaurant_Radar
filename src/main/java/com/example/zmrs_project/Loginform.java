@@ -38,6 +38,7 @@ public class Loginform {
 
             UserForm userForm = fxmlLoader.getController();
             User user1 = (User) p;
+
             userForm.setUser(User.getData(user1.getUsername(), user1.getPassword()));
 
             Stage stage = new Stage();

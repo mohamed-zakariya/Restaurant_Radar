@@ -206,6 +206,7 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
     }
+
     public ArrayList<Restaurant> getCusineRestaurant(String cusine, String location){
         Connection c = null;
         Statement st = null;
@@ -266,6 +267,45 @@ public class MyJDBC {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public double getRate(User user, Restaurant restaurant){
+        try {
+            Connection c = this.getConnection();
+            Statement statement = c.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from review");
+            while (resultSet.next()){
+                if(resultSet.getString("userName").equals(user.getUsername()) &&
+                        resultSet.getString("restaurantName").equals(restaurant.getRestaurantName())){
+                    return resultSet.getDouble("rate");
+                }
+            }
+            return 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public boolean setRate(User user, double Rate,Restaurant restaurant){
+        double value = this.getRate(user,restaurant);
+        if(value == 0){
+            try {
+                Connection c = this.getConnection();
+                PreparedStatement ps = c.prepareStatement("insert into review (userName, restaurantName, rate) values (?, ?, ?)");
+
+                ps.setString(1, user.getUsername());
+                ps.setString(2, restaurant.getRestaurantName());
+                ps.setDouble(3, Rate);
+
+                ps.executeUpdate();
+                return true;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else {
+            return false;
+        }
+
     }
 
 }
