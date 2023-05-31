@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.ResturantesTypeSlideForm">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.ResturantesTypeSlideForm">
    <children>
-      <ImageView fitHeight="703.0" fitWidth="734.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="589.0" fitWidth="588.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/2.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="21.0" layoutY="37.0" opacity="0.98" prefHeight="648.0" prefWidth="670.0" style="-fx-background-color: #533f3f; -fx-background-radius: 25; -fx-border-radius: 5px;">
+      <AnchorPane layoutX="83.0" layoutY="45.0" opacity="0.98" prefHeight="512.0" prefWidth="436.0" style="-fx-background-color: #533f3f; -fx-background-radius: 25; -fx-border-radius: 5px;">
          <children>
             <Label fx:id="label1" layoutX="57.0" layoutY="9.0" prefHeight="27.0" prefWidth="276.0" text="Label" textFill="WHITE">
                <font>
@@ -26,9 +26,9 @@
                </font>
             </Label>
             <Label fx:id="label2" layoutX="225.0" layoutY="25.0" />
-            <ScrollPane fx:id="slidePane" hbarPolicy="ALWAYS" layoutX="17.0" layoutY="40.0" opacity="0.98" prefHeight="592.0" prefWidth="638.0" style="-fx-background-radius: 20;" styleClass="scroll-bar" stylesheets="@style.css" vbarPolicy="ALWAYS">
+            <ScrollPane fx:id="slidePane" hbarPolicy="ALWAYS" layoutX="17.0" layoutY="40.0" opacity="0.98" prefHeight="456.0" prefWidth="400.0" style="-fx-background-radius: 20;" styleClass="scroll-bar" stylesheets="@style.css" vbarPolicy="ALWAYS">
                <content>
-                  <FlowPane fx:id="flowPane" opacity="0.98" prefHeight="577.0" prefWidth="622.0" />
+                  <FlowPane fx:id="flowPane" opacity="0.98" prefHeight="438.0" prefWidth="386.0" />
                </content>
             </ScrollPane>
             <Label fx:id="label3" layoutX="145.0" layoutY="5.0" />

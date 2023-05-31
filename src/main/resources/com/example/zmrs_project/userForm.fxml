@@ -11,165 +11,172 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane1" prefHeight="514.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
+<AnchorPane fx:id="anchorPane1" prefHeight="565.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
    <children>
-      <AnchorPane fx:id="anchorPane2" layoutX="212.0" layoutY="-1.0" prefHeight="505.0" prefWidth="627.0">
-         <children>
-            <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: #faa443; -fx-background-radius: 10em; -fx-border-radius: 5em; -fx-background-color: white;" />
-            <FontAwesomeIconView fill="#faa443" glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
-            <ScrollPane layoutX="9.0" layoutY="238.0" prefHeight="266.0" prefWidth="634.0" stylesheets="@style.css">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <content>
-                  <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="263.0" prefWidth="632.0">
-                     <children>
-                        <ImageView fx:id="imageView1" fitHeight="263.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/1.jpg" />
-                           </image>
-                           <FlowPane.margin>
-                              <Insets left="160.0" />
-                           </FlowPane.margin>
-                        </ImageView>
-                     </children>
-                  </FlowPane>
-               </content>
-            </ScrollPane>
-            <Label layoutX="58.0" layoutY="63.0" stylesheets="@style.css" text="What would you eat today?">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="623.0" spacing="15.0" stylesheets="@style.css">
+      <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane fx:id="anchorPane2" prefHeight="561.0" prefWidth="590.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" stylesheets="@style.css">
-                     <children>
-                        <Button layoutX="24.0" layoutY="83.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Fried Chicken">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <ImageView fitHeight="52.0" fitWidth="66.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/chicken.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <styleClass>
-                        <String fx:value="label" />
-                        <String fx:value="button" />
-                     </styleClass>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
-                     <children>
-                        <Button layoutX="46.0" layoutY="78.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Pizza">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <ImageView fitHeight="52.0" fitWidth="88.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/pizza.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
-                     <children>
-                        <Button layoutX="42.0" layoutY="80.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Burger">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <ImageView fitHeight="52.0" fitWidth="88.0" layoutX="40.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/burger.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" styleClass="hyper-link" stylesheets="@style.css">
-                     <children>
-                        <Button layoutX="32.0" layoutY="80.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Sea Food">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/fish.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </HBox>
-         </children>
-      </AnchorPane>
-      <VBox prefHeight="505.0" prefWidth="212.0" style="-fx-background-color: white;">
-         <children>
-            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="212.0">
-               <children>
-                  <FontAwesomeIconView fill="#faa443" glyphName="USER" size="25" />
-                  <Label fx:id="label2" alignment="CENTER" prefHeight="27.0" prefWidth="126.0" textFill="#faa443">
+                  <TextField fx:id="textfield1" focusTraversable="false" layoutX="58.0" layoutY="21.0" onAction="#search" prefHeight="26.0" prefWidth="387.0" promptText="Search for nearst restaurants " style="-fx-border-color: #faa443; -fx-background-radius: 10em; -fx-border-radius: 5em; -fx-background-color: white;" />
+                  <FontAwesomeIconView fill="#faa443" glyphName="SEARCH" layoutX="418.0" layoutY="39.0" onMouseClicked="#search" size="15" wrappingWidth="7.942845344543457" />
+                  <ScrollPane layoutX="9.0" layoutY="238.0" prefHeight="322.0" prefWidth="583.0" stylesheets="@style.css">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <content>
+                        <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="314.0" prefWidth="580.0">
+                           <children>
+                              <ImageView fx:id="imageView1" fitHeight="330.0" fitWidth="314.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/1.jpg" />
+                                 </image>
+                                 <FlowPane.margin>
+                                    <Insets left="140.0" />
+                                 </FlowPane.margin>
+                              </ImageView>
+                           </children>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+                  <Label layoutX="58.0" layoutY="63.0" stylesheets="@style.css" text="What would you eat today?">
                      <font>
-                        <Font name="System Italic" size="18.0" />
+                        <Font size="14.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets left="5.0" />
-                     </VBox.margin>
                   </Label>
+                  <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="587.0" spacing="15.0" stylesheets="@style.css">
+                     <children>
+                        <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" stylesheets="@style.css">
+                           <children>
+                              <Button layoutX="24.0" layoutY="83.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Fried Chicken">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fitHeight="52.0" fitWidth="66.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/chicken.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <styleClass>
+                              <String fx:value="label" />
+                              <String fx:value="button" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                           <children>
+                              <Button layoutX="46.0" layoutY="78.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Pizza">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fitHeight="52.0" fitWidth="88.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/pizza.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;">
+                           <children>
+                              <Button layoutX="42.0" layoutY="80.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Burger">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fitHeight="52.0" fitWidth="88.0" layoutX="40.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/burger.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="131.0" prefWidth="132.0" style="-fx-background-color: white; -fx-background-radius: 20;" styleClass="hyper-link" stylesheets="@style.css">
+                           <children>
+                              <Button layoutX="32.0" layoutY="80.0" mnemonicParsing="false" onAction="#OpenCusineForm" style="-fx-background-color: transparent;" text="Sea Food">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/fish.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
                </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="384.0" prefWidth="212.0">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
+            </AnchorPane>
+         </center>
+         <left>
+            <VBox fx:id="vboxMain" prefHeight="505.0" prefWidth="212.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
+                  <VBox alignment="CENTER" prefHeight="120.0" prefWidth="212.0">
                      <children>
-                        <FontAwesomeIconView fill="#faa443" glyphName="HOME" size="20">
-                           <HBox.margin>
-                              <Insets right="-5.0" />
-                           </HBox.margin>
-                        </FontAwesomeIconView>
-                        <Button mnemonicParsing="false" onAction="#Home" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Home">
+                        <FontAwesomeIconView fill="#faa443" glyphName="USER" size="25" />
+                        <Label fx:id="label2" alignment="CENTER" prefHeight="27.0" prefWidth="126.0" textFill="#faa443">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="System Italic" size="18.0" />
                            </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </Label>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="449.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                      <children>
-                        <FontAwesomeIconView fill="#faa443" glyphName="SIGN_OUT" size="20">
-                           <HBox.margin>
-                              <Insets right="-5.0" />
-                           </HBox.margin>
-                        </FontAwesomeIconView>
-                        <Button mnemonicParsing="false" onAction="#returnBack" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Signout">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
+                           <children>
+                              <FontAwesomeIconView fill="#faa443" glyphName="HOME" size="20">
+                                 <HBox.margin>
+                                    <Insets right="-5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Button mnemonicParsing="false" onAction="#Home" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Home">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="200.0">
+                           <children>
+                              <FontAwesomeIconView fill="#faa443" glyphName="SIGN_OUT" size="20">
+                                 <HBox.margin>
+                                    <Insets right="-5.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Button mnemonicParsing="false" onAction="#returnBack" style="-fx-background-color: transparent;" stylesheets="@style.css" text="Signout">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
-         </children>
-      </VBox>
+         </left>
+      </BorderPane>
 
    </children>
 </AnchorPane>

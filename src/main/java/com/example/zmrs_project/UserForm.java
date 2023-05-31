@@ -13,9 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -32,6 +30,8 @@ public class UserForm {
     @FXML
     TextField textfield1;
     @FXML
+    VBox vboxMain;
+    @FXML
     Label label2;
     @FXML
     AnchorPane anchorPane1, anchorPane2;
@@ -39,6 +39,9 @@ public class UserForm {
     ImageView imageView1;
     @FXML
     FlowPane flowPane1;
+    @FXML
+    BorderPane borderPane;
+    VBox vboxTemp;
 
     public UserForm(){
 
@@ -89,34 +92,33 @@ public class UserForm {
     }
     @FXML
     public void Home(){
-        if(!anchorPane1.getChildren().contains(anchorPane2))
-            anchorPane1.getChildren().add(anchorPane2);
+        borderPane.setCenter(anchorPane2);
     }
 
 
     @FXML
     public void  OpenCusineForm(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
+
         Button button = (Button) actionEvent.getSource();
         String buttontext = button.getText();
 
-        Node n = (Node) actionEvent.getSource();
-        Stage closeWindow = (Stage) n.getScene().getWindow();
-        closeWindow.close();
+//        Node n = (Node) actionEvent.getSource();
+//        Stage closeWindow = (Stage) n.getScene().getWindow();
+//        closeWindow.close();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ResturantesTypeSlide.fxml"));
-        root = fxmlLoader.load();
-        // its to connect the slide form with the method
+
+
+        AnchorPane anchorPane3 = fxmlLoader.load();
         ResturantesTypeSlideForm resturantesTypeSlideForm = fxmlLoader.getController();
 
         resturantesTypeSlideForm.setUser(user);
         resturantesTypeSlideForm.setCusinee(buttontext);
         resturantesTypeSlideForm.getdataslide(buttontext);
 
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-        stage.setTitle(buttontext);
-        stage.setScene(scene);
-        stage.show();
+
+        borderPane.setCenter(anchorPane3);
+
 
     }
     @FXML

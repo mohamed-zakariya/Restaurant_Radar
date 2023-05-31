@@ -60,8 +60,6 @@ public class MenuForm {
 
     }
 
-
-
     private void updateImageViewVisibility(int imageIndex) {
        ImageView1.setVisible(imageIndex == 0);
        ImageView2.setVisible(imageIndex == 1);
