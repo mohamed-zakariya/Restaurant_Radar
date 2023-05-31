@@ -46,7 +46,7 @@ public class RestaurantView {
             label2.setText(String.format("%.1f",restaurant.getAvgReviews()));
         }
 
-        imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
+        imageView.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
 
     }
     @FXML
@@ -81,4 +81,23 @@ public class RestaurantView {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    public void OpenMenu (ActionEvent actionEvent) throws  IOException{
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MenuForm.fxml"));
+        root = fxmlLoader.load();
+
+        MenuForm menuForm = fxmlLoader.getController();
+        menuForm.setRestaurant(restaurant);
+        menuForm.menuSlide(restaurant);
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
