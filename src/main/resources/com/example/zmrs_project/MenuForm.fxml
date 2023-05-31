@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="403.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.MenuForm">
+   <children>
+      <ImageView fx:id="ImageView1" fitHeight="330.0" fitWidth="297.0" layoutX="23.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ImageView2" fitHeight="323.0" fitWidth="297.0" layoutX="23.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ImageView3" fitHeight="323.0" fitWidth="297.0" layoutX="23.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+      <Slider fx:id="slider" layoutX="106.0" layoutY="382.0" max="2.0" />
+   </children>
+</AnchorPane>
