@@ -10,16 +10,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.Loginform">
+<AnchorPane prefHeight="471.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.Loginform">
    <children>
       
-      <TextField fx:id="textField1" focusTraversable="false" layoutX="116.0" layoutY="157.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
-      <Button layoutX="43.0" layoutY="328.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #7ec3f2;" text="Login" textFill="WHITE">
+      <TextField fx:id="textField1" focusTraversable="false" layoutX="116.0" layoutY="157.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" />
+      <Button layoutX="43.0" layoutY="328.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #faa443;" text="Login" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Hyperlink layoutX="207.0" layoutY="385.0" onAction="#CreateForm" text="Create an account" textFill="#bc0000" />
-      <Label layoutX="163.0" layoutY="96.0" text="Login">
+      <Label layoutX="163.0" layoutY="96.0" text="Login" textFill="#faa443">
          <font>
             <Font size="22.0" />
          </font>
@@ -29,7 +29,7 @@
             <Font name="System Italic" size="12.0" />
          </font></Label>
       <Label layoutX="81.0" layoutY="387.0" text="Don't have an account?" />
-      <FontAwesomeIconView glyphName="USERS" layoutX="174.0" layoutY="83.0" size="30" text="" />
-      <PasswordField fx:id="textField2" layoutX="119.0" layoutY="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+      <FontAwesomeIconView fill="#faa443" glyphName="USERS" layoutX="174.0" layoutY="83.0" size="30" text="" />
+      <PasswordField fx:id="textField2" layoutX="119.0" layoutY="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" />
    </children>
 </AnchorPane>
