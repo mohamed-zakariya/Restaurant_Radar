@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="590.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.ReviwHistoryForm">
+<AnchorPane prefHeight="574.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.ReviwHistoryForm">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="80.0" layoutY="28.0" prefHeight="534.0" prefWidth="348.0" stylesheets="@style.css" vbarPolicy="ALWAYS">
-         <content>
-             <VBox fx:id="reviewContainer" spacing="10" styleClass="review-container">
+      <ImageView fitHeight="583.0" fitWidth="572.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="37.0" layoutY="11.0" opacity="0.96" prefHeight="551.0" prefWidth="468.0" style="-fx-background-color: #3B3131; -fx-background-radius: 25;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="60.0" layoutY="24.0" prefHeight="485.0" prefWidth="348.0" stylesheets="@style.css" vbarPolicy="ALWAYS">
+               <content>
+                   <VBox fx:id="reviewContainer" spacing="10" styleClass="review-container">
              </VBox>
-         </content>
-      </ScrollPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

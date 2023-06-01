@@ -7,11 +7,13 @@
 -fx-text-fill: #faa443;
 }
 .scroll-bar:vertical .thumb{
--fx-background-color: linear-gradient(transparent, #3B3131);
+/*-fx-background-color: linear-gradient(transparent, #3B3131);*/
+-fx-background-color: #3B3131;
 -fx-border-radius: 6px;
 }
 .scroll-bar:horizontal .thumb{
--fx-background-color: linear-gradient(transparent,  #3B3131);
+/*-fx-background-color: linear-gradient(transparent,  #3B3131);*/
+-fx-background-color: #3B3131;
 -fx-border-radius: 6px;
 }
 .scroll-bar:horizontal .thumb:hover, .scroll-bar:vertical .thumb:hover{
