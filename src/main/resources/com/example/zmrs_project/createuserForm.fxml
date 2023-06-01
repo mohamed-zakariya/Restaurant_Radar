@@ -24,9 +24,9 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="username_text" focusTraversable="false" layoutX="118.0" layoutY="160.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextField fx:id="password_text" focusTraversable="false" layoutX="118.0" layoutY="219.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextField fx:id="email_text" focusTraversable="false" layoutX="119.0" layoutY="275.0" prefHeight="28.0" prefWidth="150.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="username_text" focusTraversable="false" layoutX="118.0" layoutY="160.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
+            <TextField fx:id="password_text" focusTraversable="false" layoutX="118.0" layoutY="219.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
+            <TextField fx:id="email_text" focusTraversable="false" layoutX="119.0" layoutY="275.0" prefHeight="28.0" prefWidth="150.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
             <Button layoutX="61.0" layoutY="327.0" mnemonicParsing="false" onAction="#create1" prefHeight="36.0" prefWidth="264.0" style="-fx-background-color: #faa443;" text="Create" textFill="WHITE" />
             <FontAwesomeIconView fill="#faa443" glyphName="USERS" layoutX="175.0" layoutY="75.0" size="30" />
          </children>

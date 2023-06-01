@@ -30,7 +30,7 @@
                         <Insets />
                      </opaqueInsets>
                      <content>
-                        <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="318.0" prefWidth="581.0" style="-fx-background-color: #3B3131;">
+                        <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="318.0" prefWidth="581.0">
                            <children>
                               <ImageView fx:id="imageView1" fitHeight="322.0" fitWidth="318.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

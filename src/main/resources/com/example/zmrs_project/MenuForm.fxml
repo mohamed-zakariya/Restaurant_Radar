@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="403.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.MenuForm">
+<AnchorPane prefHeight="610.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.MenuForm">
    <children>
-      <ImageView fx:id="ImageView1" fitHeight="330.0" fitWidth="297.0" layoutX="23.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="ImageView2" fitHeight="323.0" fitWidth="297.0" layoutX="23.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="ImageView3" fitHeight="323.0" fitWidth="297.0" layoutX="23.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
-      <Slider fx:id="slider" layoutX="106.0" layoutY="382.0" max="2.0" />
+      <ImageView fitHeight="659.0" fitWidth="423.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Premium-Photo-_-Restaurant-menu_-top-view-of-woodboard-menu-laying-on-the-rustic-wooden-desk-with-ac.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="25.0" layoutY="192.0" opacity="0.89" prefHeight="416.0" prefWidth="370.0" style="-fx-background-color: #3B3131;">
+         <children>
+            <ImageView fx:id="ImageView1" fitHeight="314.0" fitWidth="299.0" layoutX="38.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageView2" fitHeight="327.0" fitWidth="289.0" layoutX="41.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageView3" fitHeight="327.0" fitWidth="299.0" layoutX="38.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+            <Slider fx:id="slider" layoutX="115.0" layoutY="381.0" max="2.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
