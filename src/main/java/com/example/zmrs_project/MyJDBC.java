@@ -166,7 +166,7 @@ public class MyJDBC {
 
                             //System.out.println(resultSet1.getString("comment"));
                             System.out.println(resultSet1.getString("time"));
-                            comment.add(resultSet1.getString("comment")+"commented at :"+resultSet1.getString("time"));
+                            comment.add(resultSet1.getString("comment")+" "+" / at :"+resultSet1.getString("time"));
                             //comment.add(resultSet1.getString("comment"));
                     }
 
