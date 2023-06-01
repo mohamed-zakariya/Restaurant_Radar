@@ -19,6 +19,7 @@ import org.controlsfx.glyphfont.FontAwesome;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class RestaurantView {
@@ -30,6 +31,10 @@ public class RestaurantView {
     @FXML
     TextField textField;
     @FXML
+    TextField  textField1;
+    @FXML
+    Label labelComment;
+     @FXML
     FlowPane flowPane1;
     @FXML
     ImageView imageView;
@@ -38,6 +43,7 @@ public class RestaurantView {
     private Restaurant restaurant;
     private User user;
     private Review review;
+    private LocalDateTime time;
 
     public void setRestaurant(Restaurant restaurant){
         this.restaurant = restaurant;
@@ -63,7 +69,7 @@ public class RestaurantView {
                 if(user.getUsername().equals(review1.getUser().getUsername()))
                     label.setText("You"+" commented :"+review1.getComment()+"");
                 else{
-                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment()+"");
+                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment()+""+review1);
 
                 }
                 label.setTextFill(Color.WHITE);
@@ -75,7 +81,7 @@ public class RestaurantView {
             }
         }
 
-        imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
+        imageView.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
 
     }
     @FXML
@@ -129,8 +135,16 @@ public class RestaurantView {
         stage.show();
     }
     @FXML
-    public void addComment(){
+    public void addComment(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
+        String commentt = textField1.getText();
+        if (commentt.isEmpty()) {
+            labelComment.setText("pls enter your comment");}
+        else {
+        time =LocalDateTime.now();
+        review.addcomment(user,restaurant,commentt,time);
 
+
+        labelComment.setText("The comment added succsecfully");}
     }
 
 }
