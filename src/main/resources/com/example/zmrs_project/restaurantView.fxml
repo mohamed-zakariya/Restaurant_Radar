@@ -43,7 +43,7 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="375.0" layoutY="391.0" mnemonicParsing="false" onAction="#doRate" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #faa443; -fx-background-radius: 0;" text="Add Rate" textFill="WHITE">
+            <Button layoutX="415.0" layoutY="387.0" mnemonicParsing="false" onAction="#doRate" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #faa443; -fx-background-radius: 0;" text="Add Rate" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -60,24 +60,24 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <Button layoutX="426.0" layoutY="550.0" mnemonicParsing="false" onAction="#OpenMenu" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #faa443;" text="Show Menu" textFill="WHITE" />
+            <Button layoutX="415.0" layoutY="282.0" mnemonicParsing="false" onAction="#OpenMenu" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #faa443;" text="Show Menu" textFill="WHITE" />
             <Label fx:id="label5" layoutX="68.0" layoutY="307.0" text="Branches: " textFill="WHITE">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="121.0" layoutY="434.0" prefHeight="51.0" prefWidth="216.0">
+            <ScrollPane layoutX="121.0" layoutY="434.0" prefHeight="71.0" prefWidth="243.0">
                <content>
                   <FlowPane fx:id="flowPane1" prefHeight="46.0" prefWidth="203.0" />
                </content>
             </ScrollPane>
-            <TextField fx:id="textField1" layoutX="118.0" layoutY="506.0" />
-            <Button layoutX="313.0" layoutY="506.0" mnemonicParsing="false" onAction="#addComment" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #faa443; -fx-background-radius: 0;" text="Add comment" textFill="WHITE">
+            <TextField fx:id="textField1" layoutX="118.0" layoutY="525.0" />
+            <Button layoutX="415.0" layoutY="529.0" mnemonicParsing="false" onAction="#addComment" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #faa443; -fx-background-radius: 0;" text="Add comment" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="labelComment" layoutX="113.0" layoutY="542.0" prefHeight="18.0" prefWidth="208.0" textFill="#d90000" />
+            <Label fx:id="labelComment" layoutX="116.0" layoutY="555.0" prefHeight="18.0" prefWidth="208.0" textFill="#d90000" />
          </children>
       </AnchorPane>
       <Button layoutX="32.0" layoutY="5.0" mnemonicParsing="false" onAction="#returnBack" opacity="0.0" prefHeight="26.0" prefWidth="36.0">

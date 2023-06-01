@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
@@ -63,25 +64,38 @@ public class RestaurantView {
             label2.setText(String.format("%.1f",restaurant.getAvgReviews()));
             for(int i = 0; i < Restaurant.getReviews(restaurant).size(); i++){
                 Review review1 = Restaurant.getReviews(restaurant).get(i);
-                Label label = new Label();
+                //Label label = new Label();
+
                 if(review1.getComment().equals(new ArrayList<>()))
                     continue;
-                if(user.getUsername().equals(review1.getUser().getUsername()))
-                    label.setText("You"+" commented :"+review1.getComment()+"");
-                else{
-                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment()+""+review1);
 
+                StringBuilder commentText = new StringBuilder();
+                for (String comment : review1.getComment()) {
+                    commentText.append(comment).append(System.lineSeparator());
                 }
-                label.setTextFill(Color.WHITE);
-                label.setStyle("-fx-background-color:#faa443;");
 
-                System.out.println(label.getText());
+                Label label = new Label();
+                if (user.getUsername().equals(review1.getUser().getUsername())){
+                    label.setText("You commented:\n" + commentText.toString());
+                    }
+                else{
+                    label.setText(review1.getUser().getUsername() + " commented:\n" + commentText.toString());
+                        }
+
+
+                label.setTextFill(Color.BLACK);
+                label.setStyle("-fx-background-color: #FACDAB; -fx-background-radius: 5;");
+
+
+
+
                 flowPane1.getChildren().addAll(label);
+                flowPane1.setVgap(13);
 
             }
         }
 
-        imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
+        imageView.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
 
     }
     @FXML
