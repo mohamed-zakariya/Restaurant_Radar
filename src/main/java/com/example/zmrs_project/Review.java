@@ -2,6 +2,7 @@ package com.example.zmrs_project;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Review {
@@ -11,6 +12,8 @@ public class Review {
     private Restaurant restaurant;
 
     private ArrayList<String> comment ;
+
+    private String COMMENT;
 
     public Review(User user, Restaurant restaurant){
         this.user = user;
@@ -52,6 +55,11 @@ public class Review {
     public  boolean setRate(User user, double rate, Restaurant restaurant) throws SQLException, ClassNotFoundException {
         MyJDBC myJDBC = MyJDBC.getInstance();
        return myJDBC.setRate(user, rate, restaurant);
+    }
+
+    public  void addcomment(User user, Restaurant restaurant, String COMMENT, LocalDateTime time) throws SQLException, ClassNotFoundException {
+        MyJDBC myJDBC = MyJDBC.getInstance();
+        myJDBC. addComment(user,restaurant,COMMENT,time);
     }
 
 }

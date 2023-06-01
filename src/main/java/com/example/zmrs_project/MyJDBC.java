@@ -2,6 +2,7 @@ package com.example.zmrs_project;
 
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Set;
@@ -9,9 +10,10 @@ import java.util.Set;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/login";
+    String url = "jdbc:mysql://localhost:3306/try";
     String user = "root";
-    String password = "Mhdzikoo@123";
+    String password = "Radwan123456";
+    LocalDateTime Time ;
     MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -159,10 +161,13 @@ public class MyJDBC {
                     preparedStatement.setString(2, resultSet.getString("restaurantName"));
 
                     ResultSet resultSet1 = preparedStatement.executeQuery();
+
                     while (resultSet1.next()){
 
                             //System.out.println(resultSet1.getString("comment"));
-                            comment.add(resultSet1.getString("comment"));
+                            System.out.println(resultSet1.getString("time"));
+                            comment.add(resultSet1.getString("comment")+"commented at :"+resultSet1.getString("time"));
+                            //comment.add(resultSet1.getString("comment"));
                     }
 
                     resultSet1.close();
@@ -358,4 +363,24 @@ public class MyJDBC {
 
     }
 
-}
+
+    public void addComment(User user,Restaurant restaurant,String COMMENT, LocalDateTime time){
+            try {
+                Connection c = this.getConnection();
+                PreparedStatement ps = c.prepareStatement("insert into comment (userName, restaurantName, comment, time) values (?, ?, ?, ?)");
+
+                ps.setString(1, user.getUsername());
+                ps.setString(2, restaurant.getRestaurantName());
+                ps.setString(3, COMMENT);
+                ps.setTimestamp(4, Timestamp.valueOf(time));
+
+                ps.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+
