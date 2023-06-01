@@ -80,6 +80,6 @@ public class Restaurant implements Cusine{
     public static ArrayList<Restaurant> DisplayCusineRestaurant(String cusine) throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = new MyJDBC().getInstance();
 
-        return jdbc. getCusinenooRestaurant(cusine);
+        return jdbc. getCusineRestaurant(cusine);
     }
 }

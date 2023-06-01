@@ -3,25 +3,34 @@ package com.example.zmrs_project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
 import org.controlsfx.glyphfont.FontAwesome;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RestaurantView {
 
     @FXML
     Rating rating;
     @FXML
-    Label label1, label2, label3, label4;
+    Label label1, label2, label3, label4, label5;
+    @FXML
+    TextField textField;
+    @FXML
+    FlowPane flowPane1;
     @FXML
     ImageView imageView;
     @FXML
@@ -40,10 +49,30 @@ public class RestaurantView {
         rating.setRating(review.getRate(user, restaurant));
         label1.setText(label1.getText() + restaurant.getRestaurantName());
         label3.setText(Restaurant.getReviews(restaurant).size()+" reviews");
+        label5.setText(label5.getText()+restaurant.getLocationsOfRestaurant());
+        flowPane1.setPadding(new Insets(5,5,5,5));
         if(Restaurant.getReviews(restaurant).size() == 0){
             label2.setText(0+"");
         }else{
             label2.setText(String.format("%.1f",restaurant.getAvgReviews()));
+            for(int i = 0; i < Restaurant.getReviews(restaurant).size(); i++){
+                Review review1 = Restaurant.getReviews(restaurant).get(i);
+                Label label = new Label();
+                if(review1.getComment().equals(new ArrayList<>()))
+                    continue;
+                if(user.getUsername().equals(review1.getUser().getUsername()))
+                    label.setText("You"+" commented :"+review1.getComment()+"");
+                else{
+                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment()+"");
+
+                }
+                label.setTextFill(Color.WHITE);
+                label.setStyle("-fx-background-color:#faa443;");
+
+                System.out.println(label.getText());
+                flowPane1.getChildren().addAll(label);
+
+            }
         }
 
         imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
@@ -98,6 +127,10 @@ public class RestaurantView {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    public void addComment(){
+
     }
 
 }

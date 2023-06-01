@@ -21,9 +21,9 @@
       </ImageView>
       <AnchorPane layoutX="77.0" layoutY="44.0" opacity="0.96" prefHeight="417.0" prefWidth="370.0" style="-fx-background-color: #3B3131; -fx-background-radius: 35;">
          <children>
-            <TextField fx:id="textField1" focusTraversable="false" layoutX="109.0" layoutY="176.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
-            <PasswordField fx:id="textField2" focusTraversable="false" layoutX="107.0" layoutY="244.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
-            <Button layoutX="40.0" layoutY="316.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #faa443;" text="Login" textFill="WHITE">
+            <TextField fx:id="textField1" focusTraversable="false" layoutX="109.0" layoutY="171.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
+            <PasswordField fx:id="textField2" focusTraversable="false" layoutX="107.0" layoutY="239.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #faa443; -fx-border-width: 0px 0px 2px 0px;" styleClass="textField" stylesheets="@style.css" />
+            <Button layoutX="40.0" layoutY="306.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #faa443;" text="Login" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -34,8 +34,8 @@
                </font>
             </Label>
             <FontAwesomeIconView fill="#faa443" glyphName="USERS" layoutX="161.0" layoutY="95.0" size="30" text="" />
-            <Hyperlink layoutX="191.0" layoutY="359.0" onAction="#CreateForm" text="Create an account" textFill="RED" />
-            <Label layoutX="59.0" layoutY="361.0" text="Don't have an account?" textFill="WHITE" />
+            <Hyperlink layoutX="191.0" layoutY="356.0" onAction="#CreateForm" text="Create an account" textFill="RED" />
+            <Label layoutX="63.0" layoutY="359.0" text="Don't have an account?" textFill="WHITE" />
             <Label fx:id="label1" layoutX="87.0" layoutY="287.0" prefHeight="18.0" prefWidth="181.0" textFill="#df3a3a">
                <font>
                   <Font name="System Italic" size="12.0" />

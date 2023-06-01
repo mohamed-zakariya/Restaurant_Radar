@@ -214,36 +214,59 @@ public class MyJDBC {
     public ArrayList<Review> getRestaurantReviews(Restaurant restaurant){
         Connection c = null;
         ArrayList<Review> reviews = new ArrayList<>();
-
         try{
             c = this.getConnection();
             Statement st = c.createStatement();
             ResultSet resultSet = st.executeQuery("select * from review");
             while (resultSet.next()){
-                if(resultSet.getString("restaurantName").equals(restaurant.getRestaurantName()))
-                    reviews.add(new Review(new User(resultSet.getString("userName")),
-                            resultSet.getDouble("rate"),
-                            new Restaurant(resultSet.getString("restaurantName"))));
+                if(resultSet.getString("restaurantName").equals(restaurant.getRestaurantName())){
+                    ArrayList<String> comment = new ArrayList<>();
+
+                    String sql = "SELECT * FROM comment WHERE userName = ? AND restaurantName = ?";
+
+                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+
+                    preparedStatement.setString(1, resultSet.getString("userName"));
+                    preparedStatement.setString(2, restaurant.getRestaurantName());
+
+                    ResultSet resultSet1 = preparedStatement.executeQuery();
+                    while (resultSet1.next()){
+
+                        //System.out.println(resultSet1.getString("comment"));
+                        comment.add(resultSet1.getString("comment"));
+                    }
+
+                    resultSet1.close();
+                    preparedStatement.close();
+
+                    reviews.add(new Review(new User(resultSet.getString("userName")), resultSet.getDouble("rate"),
+                            restaurant,comment));
+                }
+
             }
+
             return reviews;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
     public ArrayList<Restaurant> getCusineRestaurant(String cusine, String location){
         Connection c = null;
         Statement st = null;
-
+        Hashtable<String, Integer> hashtable = new Hashtable<String, Integer>();
         ArrayList<Restaurant> restaurants = new ArrayList<>();
         try {
             c = this.getConnection();
             st = c.createStatement();
             ResultSet resultSet = st.executeQuery("select * from restaurant");
             while(resultSet.next()){
-                if(resultSet.getString("location").equals(location) && resultSet.getString("cusine").equals(cusine)){
+                if(resultSet.getString("cusine").equals(cusine) && resultSet.getString("location") == location){
                     restaurants.add(new Restaurant(resultSet.getString("restaurantName"),
+                            this.getRestaurantBranches(new Restaurant(resultSet.getString("restaurantName"))),
                             resultSet.getString("cusine")));
+
+                    hashtable.put(resultSet.getString("restaurantName"), 1);
                 }
             }
             return restaurants;
@@ -251,7 +274,7 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
     }
-    public ArrayList<Restaurant> getCusinenooRestaurant(String cusine){
+    public ArrayList<Restaurant> getCusineRestaurant(String cusine){
         Connection c = null;
         Statement st = null;
         Hashtable<String, Integer> hashtable = new Hashtable<String, Integer>();
