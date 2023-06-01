@@ -139,6 +139,23 @@ public class UserForm {
     }
 
 
+    @FXML
+    public void reviwHistory(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
+        Button button = (Button) actionEvent.getSource();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("reviwHistoryForm.fxml"));
+
+
+        AnchorPane anchorPane4 = fxmlLoader.load();
+         ReviwHistoryForm reviwHistoryForm = fxmlLoader.getController();
+
+        reviwHistoryForm.setUser(user);
+        reviwHistoryForm.ShowHistory(user);
+        anchorPane4.setPrefSize(588, 590);
+
+
+      borderPane.setCenter(anchorPane4);
+    }
 
 
 }

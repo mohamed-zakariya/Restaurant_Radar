@@ -32,3 +32,29 @@
 .hyperlink{
 -fx-text-fill: #faa443;
 }
+
+.review-card {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 10px;
+}
+
+.review-card .label {
+    -fx-font-family: "Arial";
+}
+
+.review-card .rate-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: #003366;
+}
+
+.review-card .restaurant-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.review-card .comment-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
