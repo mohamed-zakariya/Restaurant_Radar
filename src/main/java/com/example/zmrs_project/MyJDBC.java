@@ -9,9 +9,9 @@ import java.util.Set;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/try";
+    String url = "jdbc:mysql://localhost:3306/login";
     String user = "root";
-    String password = "Radwan123456";
+    String password = "Mhdzikoo@123";
     MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

@@ -45,6 +45,21 @@ public class CreateuserForm {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    public void returnBack(ActionEvent actionEvent) throws IOException {
+        Node n = (Node)  actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginform.fxml"));
+        root = fxmlLoader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
 

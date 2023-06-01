@@ -46,7 +46,7 @@ public class ResturantesTypeSlideForm {
     public void getdataslide(String cusine) throws SQLException, ClassNotFoundException {
      //resturantes to add them to the array of resurantes of  cusine
         try {
-            restaurants = Restaurant.DisplayCusineooRestaurant(cusine);
+            restaurants = Restaurant.DisplayCusineRestaurant(cusine);
             if (!restaurants.isEmpty()) {
 
                 // Create a VBox to hold the restaurant slides

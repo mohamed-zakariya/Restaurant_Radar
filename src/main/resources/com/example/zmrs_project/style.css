@@ -7,20 +7,20 @@
 -fx-text-fill: #faa443;
 }
 .scroll-bar:vertical .thumb{
--fx-background-color: linear-gradient(transparent,#533f3f);
+-fx-background-color: linear-gradient(transparent, #3B3131);
 -fx-border-radius: 6px;
 }
 .scroll-bar:horizontal .thumb{
--fx-background-color: linear-gradient(transparent, #533f3f);
+-fx-background-color: linear-gradient(transparent,  #3B3131);
 -fx-border-radius: 6px;
 }
 .scroll-bar:horizontal .thumb:hover, .scroll-bar:vertical .thumb:hover{
 /*-fx-background-color: black;*/
 
 }
-.text-field{
+.textField{
 /*-fx-prompt-text-fill: #faa443;*/
--fx-text-fill: black;
+-fx-text-fill: white;
 }
 .hyperlink{
 -fx-text-fill: #faa443;

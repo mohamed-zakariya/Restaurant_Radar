@@ -8,6 +8,7 @@ public class Restaurant implements Cusine{
     private String restaurantName;
     private ArrayList<String> locations;
     private String cusine;
+    private String phone;
     private Double avgRate = (double) 0;
 
     private static ArrayList<Review> restaurantReviews;
@@ -76,7 +77,7 @@ public class Restaurant implements Cusine{
         return jdbc.getCusineRestaurant(cusine, location);
     }
     // this the same as the above but only use it to the cusine only
-    public static ArrayList<Restaurant> DisplayCusineooRestaurant(String cusine) throws SQLException, ClassNotFoundException {
+    public static ArrayList<Restaurant> DisplayCusineRestaurant(String cusine) throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = new MyJDBC().getInstance();
 
         return jdbc. getCusinenooRestaurant(cusine);

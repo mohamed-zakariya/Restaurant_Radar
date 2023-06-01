@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane1" prefHeight="565.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
+<AnchorPane fx:id="anchorPane1" prefHeight="565.0" prefWidth="806.0" style="-fx-background-color: #3B3131;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.UserForm">
    <children>
       <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
          <center>
@@ -22,9 +30,9 @@
                         <Insets />
                      </opaqueInsets>
                      <content>
-                        <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="314.0" prefWidth="580.0">
+                        <FlowPane fx:id="flowPane1" columnHalignment="CENTER" prefHeight="318.0" prefWidth="581.0" style="-fx-background-color: #3B3131;">
                            <children>
-                              <ImageView fx:id="imageView1" fitHeight="330.0" fitWidth="314.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imageView1" fitHeight="322.0" fitWidth="318.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/1.jpg" />
                                  </image>
@@ -41,7 +49,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <HBox layoutX="11.0" layoutY="93.0" prefHeight="131.0" prefWidth="587.0" spacing="15.0" stylesheets="@style.css">
+                  <HBox layoutX="6.0" layoutY="94.0" prefHeight="131.0" prefWidth="587.0" spacing="15.0" stylesheets="@style.css">
                      <children>
                         <AnchorPane prefHeight="131.0" prefWidth="134.5" style="-fx-background-color: white; -fx-background-radius: 20;" stylesheets="@style.css">
                            <children>
@@ -109,7 +117,7 @@
             </AnchorPane>
          </center>
          <left>
-            <VBox fx:id="vboxMain" prefHeight="505.0" prefWidth="212.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <VBox fx:id="vboxMain" prefHeight="561.0" prefWidth="205.0" style="-fx-background-color: #3B3131;" BorderPane.alignment="CENTER">
                <children>
                   <VBox alignment="CENTER" prefHeight="120.0" prefWidth="212.0">
                      <children>
@@ -124,7 +132,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="449.0" prefWidth="200.0">
+                  <VBox alignment="CENTER" prefHeight="446.0" prefWidth="206.0" spacing="10.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -153,7 +161,7 @@
                                     <Insets right="-5.0" />
                                  </HBox.margin>
                               </FontAwesomeIconView>
-                              <Button mnemonicParsing="false" onAction="#reviwHistory" style="-fx-background-color: transparent;" stylesheets="@style.css" text="HistoryReviw">
+                              <Button mnemonicParsing="false" onAction="#reviwHistory" style="-fx-background-color: transparent;" stylesheets="@style.css" text="My Reviews">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
