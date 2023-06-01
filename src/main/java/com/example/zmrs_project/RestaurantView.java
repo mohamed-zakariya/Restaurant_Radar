@@ -46,7 +46,7 @@ public class RestaurantView {
             label2.setText(String.format("%.1f",restaurant.getAvgReviews()));
         }
 
-        imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
+        imageView.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
 
     }
     @FXML

@@ -9,9 +9,9 @@ import java.util.Set;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/login";
+    String url = "jdbc:mysql://localhost:3306/try";
     String user = "root";
-    String password = "Mhdzikoo@123";
+    String password = "Radwan123456";
     MyJDBC()throws SQLException{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -147,10 +147,33 @@ public class MyJDBC {
             Statement st = c.createStatement();
             ResultSet resultSet = st.executeQuery("select * from review");
             while (resultSet.next()){
-                if(resultSet.getString("userName").equals(user.getUsername()))
+                if(resultSet.getString("userName").equals(user.getUsername())){
+                    ArrayList<String> comment = new ArrayList<>();
+
+                    String sql = "SELECT * FROM comment WHERE userName = ? AND restaurantName = ?";
+
+                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+
+                    preparedStatement.setString(1, user.getUsername());
+                    preparedStatement.setString(2, resultSet.getString("restaurantName"));
+
+                    ResultSet resultSet1 = preparedStatement.executeQuery();
+                    while (resultSet1.next()){
+
+                            //System.out.println(resultSet1.getString("comment"));
+                            comment.add(resultSet1.getString("comment"));
+                    }
+
+                    resultSet1.close();
+                    preparedStatement.close();
+
                     reviews.add(new Review(user, resultSet.getDouble("rate"),
-                            new Restaurant(resultSet.getString("restaurantName"))));
+                            new Restaurant(resultSet.getString("restaurantName")),comment));
+                }
+
             }
+
             return reviews;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -269,6 +292,7 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
     }
+
     public double getRate(User user, Restaurant restaurant){
         try {
             Connection c = this.getConnection();
@@ -286,6 +310,8 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
     }
+
+
     public boolean setRate(User user, double Rate,Restaurant restaurant){
         double value = this.getRate(user,restaurant);
         if(value == 0){
