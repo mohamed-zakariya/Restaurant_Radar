@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
@@ -50,7 +51,7 @@ public class RestaurantView {
     }
     public void setUser(User user){ this.user = user;}
 
-    public void showData() throws SQLException, ClassNotFoundException {
+    public void showData() throws SQLException, ClassNotFoundException, IOException {
         review = new Review(user, restaurant);
         rating.setRating(review.getRate(user, restaurant));
         label1.setText(label1.getText() + restaurant.getRestaurantName());
@@ -64,19 +65,33 @@ public class RestaurantView {
             for(int i = 0; i < Restaurant.getReviews(restaurant).size(); i++){
                 Review review1 = Restaurant.getReviews(restaurant).get(i);
                 Label label = new Label();
+
                 if(review1.getComment().equals(new ArrayList<>()))
                     continue;
-                if(user.getUsername().equals(review1.getUser().getUsername()))
-                    label.setText("You"+" commented :"+review1.getComment()+"");
-                else{
-                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment());
 
+
+                StringBuilder commentText = new StringBuilder();
+                for (String comment : review1.getComment()) {
+                    commentText.append(comment).append(System.lineSeparator());
                 }
-                label.setTextFill(Color.WHITE);
-                label.setStyle("-fx-background-color:#faa443;");
 
-                System.out.println(label.getText());
+
+                if (user.getUsername().equals(review1.getUser().getUsername())){
+                    label.setText("You commented:\n" + commentText.toString());
+                    }
+                else{
+                    label.setText(review1.getUser().getUsername() + " commented:\n" + commentText.toString());
+                }
+
+
+                label.setTextFill(Color.BLACK);
+                label.setStyle("-fx-background-color: #FACDAB; -fx-background-radius: 5;");
+
+
+
+                flowPane1.setVgap(10);
                 flowPane1.getChildren().addAll(label);
+                flowPane1.setVgap(10);
 
             }
         }
@@ -118,7 +133,7 @@ public class RestaurantView {
     }
 
     @FXML
-    public void OpenMenu (ActionEvent actionEvent) throws  IOException{
+    public void OpenMenu(ActionEvent actionEvent) throws  IOException{
         Node n = (Node) actionEvent.getSource();
         Stage closeWindow = (Stage) n.getScene().getWindow();
         closeWindow.close();
@@ -144,7 +159,10 @@ public class RestaurantView {
         review.addcomment(user,restaurant,commentt,time);
 
 
-        labelComment.setText("The comment added succsecfully");}
+        labelComment.setText("The comment added succsecfully");
+
+
+        }
     }
 
 }

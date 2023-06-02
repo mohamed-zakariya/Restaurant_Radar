@@ -109,14 +109,4 @@ public class ResturantesTypeSlideForm {
 
 
 
-   /* public void showSlideForm(String cusine) {
-        //resturantes to show them by the cusine
-
-        for(int i = 0; i < restaurants.size(); i++)
-
-        }
-
-    */
-
-
 }

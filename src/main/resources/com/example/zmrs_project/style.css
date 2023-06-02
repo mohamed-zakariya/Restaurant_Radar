@@ -59,4 +59,8 @@
     -fx-font-size: 14px;
     -fx-text-fill: #333333;
 }
-
+.bordered-vbox {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}

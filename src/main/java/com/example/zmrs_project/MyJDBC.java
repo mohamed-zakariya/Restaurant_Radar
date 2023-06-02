@@ -381,6 +381,82 @@ public class MyJDBC {
             }
         }
 
+      //Admin functiouns
+      public void insertRestaruants(String restaurantName,String location, String cusine,String phone) throws SQLException {
+          Connection c = null;
+          PreparedStatement ps = null;
+          try {
+              c = this.getConnection();
+              String query = "insert into restaurant (restaurantName, location, cusine, phone) VALUES (?, ?, ?, ?)";
+              ps = c.prepareStatement(query);
+              ps.setString(1, restaurantName);
+              ps.setString(2, location);
+              ps.setString(3, cusine);
+              ps.setString(4, phone);
+
+              ps.executeUpdate();
+              ps.close();
+              c.close();
+          } catch (Exception e) {
+              System.out.println(e.getMessage());
+          }
+      }
+
+    public void UpdateOnelocationByremoveingTheAnother(Location newAddress){
+        Connection c=null;
+        PreparedStatement ps= null;
+        try{
+            c=this.getConnection();
+            String qurey="update into Restaurant ( address )set value(?)";
+            ps= c.prepareStatement(qurey);
+            ps.setString(2,newAddress.toString());
+
+            ps.executeUpdate();
+            ps.close();
+            c.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
+    public void addBranchRestaurant(Restaurant restaurant,String  MoreLocation){//resturant
+        Connection c=null;
+        PreparedStatement ps= null;
+        try{
+            c=this.getConnection();
+            String qurey="insert into restaurant (location) value ( ?) where restaurantName= ? ";
+            ps=c.prepareStatement(qurey);
+            ps.setString(1,MoreLocation);
+            ps.setString(2,restaurant.getRestaurantName());
+            ps.executeUpdate();
+            ps.close();
+            c.close();
+
+
+        }
+        catch(Exception e){
+            System.out.println( e.getMessage());
+        }
+    }
+    public void Remove(String restaurantName ){
+        Connection c=null;
+        PreparedStatement ps= null;
+        try{
+            c=this.getConnection();
+            String qurey= "delete  from restaurant  WHERE restaurantName = ?";
+            ps=c.prepareStatement(qurey);
+            ps.setString(0,restaurantName);
+            ps.executeUpdate();
+            ps.close();
+            c.close();
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    }
+
+
 
 

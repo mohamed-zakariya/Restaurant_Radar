@@ -49,9 +49,15 @@ public class Loginform {
             stage.setScene(scene);
             stage.show();
         } else if (p instanceof Admin) {
+
+
             closeWindow.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addResturanetForm.fxml"));
             root = fxmlLoader.load();
+
+            AddResturanetForm addResturanetForm= fxmlLoader.getController();
+
+            addResturanetForm.setAdmin((Admin)p);
 
             Stage stage = new Stage();
             Scene scene = new Scene(root);
