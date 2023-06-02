@@ -69,7 +69,7 @@ public class RestaurantView {
                 if(user.getUsername().equals(review1.getUser().getUsername()))
                     label.setText("You"+" commented :"+review1.getComment()+"");
                 else{
-                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment()+""+review1);
+                    label.setText(review1.getUser().getUsername()+" commented :"+review1.getComment());
 
                 }
                 label.setTextFill(Color.WHITE);

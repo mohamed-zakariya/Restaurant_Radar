@@ -25,7 +25,7 @@ public class MyJDBC {
             System.out.println("not connected + "+ e.getMessage());
         }
     }
-    public static MyJDBC getInstance() throws SQLException, ClassNotFoundException {
+    public static synchronized MyJDBC getInstance() throws SQLException, ClassNotFoundException {
         if(jdbc == null){
             jdbc = new MyJDBC();
         } else if (jdbc.getConnection().isClosed()) {
@@ -33,7 +33,7 @@ public class MyJDBC {
         }
         return jdbc;
     }
-    public static Connection getConnection() throws SQLException{
+    public static synchronized Connection getConnection() throws SQLException{
 
         return connection;
     }
