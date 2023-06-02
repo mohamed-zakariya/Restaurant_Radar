@@ -98,7 +98,7 @@ public class AddResturanetForm {
             return; // Exit the method without adding the restaurant
         }
 
-        admin.AddResturant(restaurant.getRestaurantName(), restaurant.getLocation().get(0), restaurant.getCusine(), restaurant.getPhone());
+        admin.AddResturant(restaurant);
         ButtonText.setDisable(true);
         labeltocheck.setText("");
         NameText.clear();
@@ -130,7 +130,7 @@ public class AddResturanetForm {
 
 
                 String restaurantName = NameText.getText();
-                String destinationPath = "E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurantName + ".jpg";
+                String destinationPath = "C:\\Users\\DELL\\Desktop\\final project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurantName + ".jpg";
 
                 try {
                     Files.copy(file.toPath(), Paths.get(destinationPath), StandardCopyOption.REPLACE_EXISTING);

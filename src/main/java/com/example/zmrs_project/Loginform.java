@@ -52,12 +52,12 @@ public class Loginform {
 
 
             closeWindow.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addResturanetForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminForm.fxml"));
             root = fxmlLoader.load();
 
-            AddResturanetForm addResturanetForm= fxmlLoader.getController();
+            AdminForm adminForm= fxmlLoader.getController();
 
-            addResturanetForm.setAdmin((Admin)p);
+            adminForm.setAdmin((Admin)p);
 
             Stage stage = new Stage();
             Scene scene = new Scene(root);

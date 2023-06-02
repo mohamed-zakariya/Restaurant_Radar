@@ -95,7 +95,7 @@ public class RestaurantView {
             }
         }
 
-        imageView.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
+        imageView.setImage(new Image("C:\\Users\\DELL\\Desktop\\final project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
 
     }
     @FXML

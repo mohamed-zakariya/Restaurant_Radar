@@ -37,7 +37,7 @@ public Menu(Image desserts, Image juiceHotDrinks, Image mainplates) {
 
     public void setMenuImagesFromFolder(Restaurant restaurant) {
 
-    path ="E:\\6 term\\OOP\\project_zmrs_2\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Menu\\";
+    path ="C:\\Users\\DELL\\Desktop\\final project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Menu\\";
 
     desserts = new Image(path+restaurant.getRestaurantName()+"\\"+"1"+".jpg");
     juiceHotDrinks   = new Image(path+restaurant.getRestaurantName()+"\\"+"2"+".jpg");
