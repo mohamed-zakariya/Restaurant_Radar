@@ -80,7 +80,7 @@ public class RestaurantView {
                     }
                 else{
                     label.setText(review1.getUser().getUsername() + " commented:\n" + commentText.toString());
-                        }
+                }
 
 
                 label.setTextFill(Color.BLACK);
@@ -88,9 +88,9 @@ public class RestaurantView {
 
 
 
-
+                flowPane1.setVgap(10);
                 flowPane1.getChildren().addAll(label);
-                flowPane1.setVgap(13);
+                flowPane1.setVgap(10);
 
             }
         }
@@ -158,7 +158,10 @@ public class RestaurantView {
         review.addcomment(user,restaurant,commentt,time);
 
 
-        labelComment.setText("The comment added succsecfully");}
+        labelComment.setText("The comment added succsecfully");
+
+
+        }
     }
 
 }

@@ -66,7 +66,7 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="121.0" layoutY="434.0" prefHeight="71.0" prefWidth="243.0">
+            <ScrollPane layoutX="121.0" layoutY="434.0" prefHeight="71.0" prefWidth="208.0">
                <content>
                   <FlowPane fx:id="flowPane1" prefHeight="46.0" prefWidth="203.0" />
                </content>
