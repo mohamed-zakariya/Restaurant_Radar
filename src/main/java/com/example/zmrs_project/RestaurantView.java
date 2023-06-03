@@ -150,7 +150,9 @@ public class RestaurantView {
 
         MenuForm menuForm = fxmlLoader.getController();
         menuForm.setRestaurant(restaurant);
-        menuForm.menuSlide(restaurant);
+        menuForm.menuSlide();
+        menuForm.setUser(user);
+
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);

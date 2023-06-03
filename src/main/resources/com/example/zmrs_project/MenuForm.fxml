@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="610.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.MenuForm">
    <children>
@@ -12,13 +16,41 @@
             <Image url="@images/Premium-Photo-_-Restaurant-menu_-top-view-of-woodboard-menu-laying-on-the-rustic-wooden-desk-with-ac.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="25.0" layoutY="192.0" opacity="0.89" prefHeight="416.0" prefWidth="370.0" style="-fx-background-color: #3B3131;">
+      <AnchorPane layoutX="6.0" layoutY="197.0" opacity="0.89" prefHeight="416.0" prefWidth="410.0" style="-fx-background-color: #3B3131;">
          <children>
-            <ImageView fx:id="ImageView1" fitHeight="314.0" fitWidth="299.0" layoutX="38.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageView2" fitHeight="327.0" fitWidth="289.0" layoutX="41.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageView3" fitHeight="327.0" fitWidth="299.0" layoutX="38.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="buttonRight" layoutX="368.0" layoutY="178.0" mnemonicParsing="false" onAction="#change" prefHeight="31.0" prefWidth="30.0" style="-fx-background-color: transparent;" text="right">
+               <graphic>
+                  <FontAwesomeIconView disable="true" fill="#b9a1a1" glyphName="ARROW_RIGHT" size="23" />
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="ImageView1" fitHeight="314.0" fitWidth="289.0" layoutX="67.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
             <Slider fx:id="slider" layoutX="115.0" layoutY="381.0" max="2.0" />
+            <Button fx:id="buttonLeft" layoutY="178.0" mnemonicParsing="false" onAction="#change" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: transparent;" text="left">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView disable="true" fill="#b9a1a1" glyphName="ARROW_LEFT" size="23" />
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
+      <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onAction="#returnBack" prefHeight="26.0" prefWidth="42.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <FontAwesomeIconView disable="true" glyphName="ARROW_LEFT" size="21" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
