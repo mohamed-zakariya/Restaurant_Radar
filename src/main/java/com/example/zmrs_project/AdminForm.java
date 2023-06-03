@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -86,9 +87,26 @@ public class AdminForm {
 
     }
 
-    public void DELETE(){
+    public void DELETE() throws SQLException, ClassNotFoundException {
 
-    }
+
+            Restaurant selectedRestaurant = tableView.getSelectionModel().getSelectedItem();
+
+            if (selectedRestaurant != null) {
+                admin.RemoveResturant(selectedRestaurant.getRestaurantName());
+
+                tableView.getItems().remove(selectedRestaurant);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText(null);
+                alert.setContentText("Restaurant deleted successfully!");
+                alert.showAndWait();
+            }
+        }
+
+
+
     public void UPDATAE(ActionEvent actionEvent) throws IOException {
         Node n = (Node) actionEvent.getSource();
         Stage closeWindow = (Stage) n.getScene().getWindow();

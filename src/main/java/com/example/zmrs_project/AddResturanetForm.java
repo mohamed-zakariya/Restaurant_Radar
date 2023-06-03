@@ -24,6 +24,8 @@ import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.paint.Color;
+
 
 
 public class AddResturanetForm {
@@ -53,6 +55,7 @@ public class AddResturanetForm {
 
 
 
+
     private Restaurant restaurant;
 
     private Admin admin;
@@ -69,6 +72,7 @@ public class AddResturanetForm {
 
     @FXML
     public void onClick(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+
 
         String name = NameText.getText();
         String location = LocationText.getText();

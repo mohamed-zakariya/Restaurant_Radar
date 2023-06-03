@@ -89,7 +89,6 @@ public class RestaurantView {
                 else{
                     label.setText(review1.getUser().getUsername() + " commented: \n" + commentText.toString());
                 }
-                /*label.setText(label.getText()+"\t\t\t\t\t\t\t\t\t\t");*/
                 label.setPrefWidth(250);
                 label.setTextFill(Color.BLACK);
                 label.setStyle("-fx-background-color: #FACDAB; -fx-background-radius: 5;");

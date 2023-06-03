@@ -40,5 +40,5 @@ public Menu(Image desserts, Image juiceHotDrinks, Image mainplates) {
     desserts = new Image(path+restaurant.getRestaurantName()+"\\"+"1"+".jpg");
     juiceHotDrinks   = new Image(path+restaurant.getRestaurantName()+"\\"+"2"+".jpg");
     mainplates   = new Image(path+restaurant.getRestaurantName()+"\\"+"3"+".jpg");
-        }
     }
+}
