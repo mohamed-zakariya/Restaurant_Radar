@@ -13,6 +13,7 @@ public class MyJDBC {
     String url = "jdbc:mysql://localhost:3306/login";
     String user = "root";
     String password = "Mhdzikoo@123";
+
     LocalDateTime Time ;
     MyJDBC()throws SQLException{
         try {
@@ -382,17 +383,18 @@ public class MyJDBC {
         }
 
       //Admin functiouns
-      public void insertRestaruants(String restaurantName,String location, String cusine,String phone) throws SQLException {
+      public void insertRestaruants(Restaurant restaurant) throws SQLException {
           Connection c = null;
           PreparedStatement ps = null;
           try {
               c = this.getConnection();
               String query = "insert into restaurant (restaurantName, location, cusine, phone) VALUES (?, ?, ?, ?)";
               ps = c.prepareStatement(query);
-              ps.setString(1, restaurantName);
-              ps.setString(2, location);
-              ps.setString(3, cusine);
-              ps.setString(4, phone);
+              ps.setString(1,restaurant.getRestaurantName());
+
+              ps.setString(2, restaurant.getLocation().get(0));
+              ps.setString(3, restaurant.getCusine());
+              ps.setString(4, restaurant.getPhone());
 
               ps.executeUpdate();
               ps.close();
@@ -402,19 +404,24 @@ public class MyJDBC {
           }
       }
 
-    public void UpdateOnelocationByremoveingTheAnother(Location newAddress){
-        Connection c=null;
-        PreparedStatement ps= null;
-        try{
-            c=this.getConnection();
-            String qurey="update into Restaurant ( address )set value(?)";
-            ps= c.prepareStatement(qurey);
-            ps.setString(2,newAddress.toString());
+    public void updateRestaurant(Restaurant restaurant) {
+        Connection c = null;
+        PreparedStatement ps = null;
+
+        try {
+            c = this.getConnection();
+            String query = "UPDATE restaurant SET location = ?, cusine = ?, phone = ? WHERE restaurantName = ?";
+            ps = c.prepareStatement(query);
+
+            ps.setString(1, restaurant.getLocation().get(0));
+            ps.setString(2, restaurant.getCusine());
+            ps.setString(3, restaurant.getPhone());
+            ps.setString(4, restaurant.getRestaurantName());
 
             ps.executeUpdate();
             ps.close();
             c.close();
-        }catch(Exception e){
+        } catch(Exception e) {
             System.out.println(e.getMessage());
         }
     }
@@ -423,10 +430,13 @@ public class MyJDBC {
         PreparedStatement ps= null;
         try{
             c=this.getConnection();
-            String qurey="insert into restaurant (location) value ( ?) where restaurantName= ? ";
+            String qurey="insert into restaurant (restaurantName, location, cusine, phone) value ( ?, ?, ?, ?)  ";
             ps=c.prepareStatement(qurey);
-            ps.setString(1,MoreLocation);
-            ps.setString(2,restaurant.getRestaurantName());
+            ps.setString(1,restaurant.getRestaurantName());
+            ps.setString(2,MoreLocation);
+            ps.setString(3,restaurant.getCusine());
+            ps.setString(4, restaurant.getPhone());
+
             ps.executeUpdate();
             ps.close();
             c.close();
@@ -437,14 +447,14 @@ public class MyJDBC {
             System.out.println( e.getMessage());
         }
     }
-    public void Remove(String restaurantName ){
+    public void RemoveRestaurant(String restaurantName ){
         Connection c=null;
         PreparedStatement ps= null;
         try{
             c=this.getConnection();
-            String qurey= "delete  from restaurant  WHERE restaurantName = ?";
+            String qurey= "delete  from restaurant  where restaurantName = ?";
             ps=c.prepareStatement(qurey);
-            ps.setString(0,restaurantName);
+            ps.setString(1,restaurantName);
             ps.executeUpdate();
             ps.close();
             c.close();
@@ -455,7 +465,7 @@ public class MyJDBC {
     }
 
 
-    }
+}
 
 
 

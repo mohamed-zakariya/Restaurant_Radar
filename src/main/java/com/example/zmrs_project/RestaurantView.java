@@ -98,6 +98,7 @@ public class RestaurantView {
 
         imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
 
+
     }
     @FXML
     public void doRate(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {

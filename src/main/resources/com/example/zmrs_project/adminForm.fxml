@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.zmrs_project.AdminForm"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.AdminForm">
+   <children>
+      <Button fx:id="deleteButton" layoutX="393.0" layoutY="341.0" mnemonicParsing="false" onAction="#DELETE" text="delete" />
+      <Button fx:id="updateButton" layoutX="280.0" layoutY="341.0" mnemonicParsing="false" onAction="#UPDATAE" text="update" />
+      <Button fx:id="addButton" layoutX="158.0" layoutY="341.0" mnemonicParsing="false" onAction="#ADD" text="add" />
+   </children>
 </AnchorPane>

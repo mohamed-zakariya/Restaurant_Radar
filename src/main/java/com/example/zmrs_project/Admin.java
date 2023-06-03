@@ -21,31 +21,32 @@ public class Admin extends Person{
         super(username,password);
     }
 
-    public  void  AddResturant(String restaurantName ,String location, String cusine,String phone) throws SQLException, ClassNotFoundException {
+    public static  void   AddResturant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = MyJDBC.getInstance();
-        jdbc.insertRestaruants(restaurantName, location,cusine,phone);
+
+        jdbc.insertRestaruants( restaurant);
 
 
 
 
     }
 
-   /* public void update(String newAddress)throws SQLException, ClassNotFoundException{
-       //by removing one location and changed it to another location
+   /* public void update(Restaurant restaurant)throws SQLException, ClassNotFoundException{
+
        MyJDBC jdbc= MyJDBC.getInstance();
-       jdbc.UpdateOnelocationByremoveingTheAnother(newAddress);
+        jdbc.updateRestaurant( restaurant);
 
     }
-    public void addMoreLocation(Restaurant restaurant,Location newlocation)throws SQLException,ClassNotFoundException{
+    public void addBranch(Restaurant restaurant,String newlocation)throws SQLException,ClassNotFoundException{
        MyJDBC jdbc= MyJDBC.getInstance();
-       jdbc.addMoreLocation(restaurant,newlocation);
+       jdbc.addBranchRestaurant(restaurant,newlocation);
 
     }
-    public void Remove(int id)throws SQLException,ClassNotFoundException{
+    public void RemoveResturant(int id)throws SQLException,ClassNotFoundException{
        MyJDBC jdbc= MyJDBC.getInstance();
 
 
     }
-
 */
+
 }
