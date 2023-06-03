@@ -6,11 +6,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -47,16 +51,24 @@ public class UpdateResturnatForm {
     Hyperlink UpdateResturanetData;
     @FXML
     ImageView imageView1;
+
+    @FXML
+    private  Label labelAdmin;
     private Admin admin;
 
     private Restaurant restaurant;
 
     private ArrayList<String> locations;
 
+    public Parent root;
+
+
+
 
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
+        labelAdmin.setText(admin.getUsername());
     }
 
 
@@ -117,8 +129,8 @@ public class UpdateResturnatForm {
     public void Update(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         Restaurant restaurant1;
-        String location = textCusine.getText();
-        String cuisine = textLocation.getText();
+        String cuisine = textCusine.getText();
+        String location = textLocation.getText();
         String phone = textphone.getText();
 
         boolean isLocationEmpty = location.isEmpty();
@@ -127,8 +139,8 @@ public class UpdateResturnatForm {
 
 
 
-         textCusine.setPromptText(isLocationEmpty ? "Location cannot be empty" : "");
-         textLocation.setPromptText(isCuisineEmpty ? "Cuisine cannot be empty" : "");
+        textLocation.setPromptText(isLocationEmpty ? "Location cannot be empty" : "");
+         textCusine.setPromptText(isCuisineEmpty ? "Cuisine cannot be empty" : "");
          textphone.setPromptText(isPhoneEmpty ? "Phone cannot be empty" : "");
 
 
@@ -143,17 +155,48 @@ public class UpdateResturnatForm {
 
         admin.UpdateRestaurant(restaurant1);
 
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
-        alert.setHeaderText("Information Message");
-        alert.setContentText("Succesfully updated");
+        alert.setHeaderText(null);
+        alert.setContentText("Succesfully Updated ! ");
         alert.showAndWait();
 
+        UpdateButton.setVisible(false);
 
 
     }
 
+    public void returnBack(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminForm.fxml"));
+        root = fxmlLoader.load();
+
+        AdminForm adminForm = fxmlLoader.getController();
+        adminForm.setAdmin(admin);
+        adminForm.showData();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public void signOut(ActionEvent actionEvent) throws IOException {
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginform.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 
 

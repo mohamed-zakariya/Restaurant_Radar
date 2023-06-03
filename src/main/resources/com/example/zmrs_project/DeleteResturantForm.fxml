@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.DeleteResturantForm">
+   <children>
+      <Button fx:id="deleteButton" layoutX="478.0" layoutY="309.0" mnemonicParsing="false" onAction="#Delete" text="Button" />
+      <TextField fx:id="searchText" layoutX="166.0" layoutY="188.0" prefHeight="25.0" prefWidth="238.0" />
+      <Label fx:id="erorrlabel" layoutX="264.0" layoutY="222.0" text="Label" textFill="#c70d0d" />
+   </children>
+</AnchorPane>

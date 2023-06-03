@@ -57,7 +57,7 @@ public class UserForm {
         flowPane1.getChildren().clear();
         flowPane1.setPadding(new Insets(0,0,0,0));
         if(textfield1.getText().equals("")){
-            imageView1.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\images\\1.jpg"));
+            imageView1.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\images\\1.jpg"));
             flowPane1.getChildren().add(imageView1);
             flowPane1.setPadding(new Insets(0,175,0,0));
 
