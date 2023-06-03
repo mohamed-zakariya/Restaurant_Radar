@@ -63,10 +63,10 @@ public class RestaurantForm {
         anchorPane2.setLayoutY(275);
         label2.setLayoutY(280);
         label1.setText(label1.getText() + restaurant.getRestaurantName());
-        label2.setText("Location:" + restaurant.getLocationsOfRestaurant());
-
+        label2.setText("Location:" + restaurant.getLocationsOfRestaurant(new Restaurant(restaurant.getRestaurantName())));
 
         Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
+
         imageView1.setImage(image);
     }
     @FXML

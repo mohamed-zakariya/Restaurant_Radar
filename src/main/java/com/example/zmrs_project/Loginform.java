@@ -58,7 +58,7 @@ public class Loginform {
             AdminForm adminForm= fxmlLoader.getController();
 
             adminForm.setAdmin((Admin)p);
-
+            adminForm.showData();
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setTitle("Admin!");

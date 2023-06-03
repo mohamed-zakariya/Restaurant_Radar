@@ -303,6 +303,29 @@ public class MyJDBC {
             throw new RuntimeException(e);
         }
     }
+    public ArrayList<Restaurant> getAllRestaurants(){
+        Hashtable<String, Integer> hashtable = new Hashtable<String, Integer>();
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        try {
+            Connection c = connection;
+            Statement statement = c.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from restaurant");
+            while(resultSet.next()){
+                if(hashtable.get(resultSet.getString("restaurantName")) == null){
+                    restaurants.add(new Restaurant(
+                            resultSet.getString("restaurantName"),
+                            this.getRestaurantBranches(new Restaurant(resultSet.getString("restaurantName"))),
+                            resultSet.getString("cusine")
+                    ));
+                    hashtable.put(resultSet.getString("restaurantName"), 1);
+                }
+            }
+            return restaurants;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public ArrayList<String> getRestaurantBranches(Restaurant restaurant){
         Connection c = null;
         Statement st = null;
@@ -382,7 +405,38 @@ public class MyJDBC {
             }
         }
 
-      //Admin functiouns
+    public Restaurant getRestaurantData(String restaurantName){
+        Connection c = null;
+        Statement st = null;
+        Restaurant restaurant;
+        try {
+            c = this.getConnection();
+            st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
+            while (resultSet.next()){
+                if(resultSet.getString("restaurantName").equals(restaurantName)){
+
+                    String name = resultSet.getString("restaurantName");
+                    String cusine = resultSet.getString("cusine");
+                    String location = resultSet.getString("location");
+                    String phone = resultSet.getString("phone");
+                    ArrayList<String> locations = new ArrayList<>();
+                    locations.add(location);
+
+                    restaurant = new Restaurant(name,locations,cusine,phone);
+
+                    return restaurant;
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+
+      //Admin functions
       public void insertRestaruants(Restaurant restaurant) throws SQLException {
           Connection c = null;
           PreparedStatement ps = null;
@@ -392,7 +446,7 @@ public class MyJDBC {
               ps = c.prepareStatement(query);
               ps.setString(1,restaurant.getRestaurantName());
 
-              ps.setString(2, restaurant.getLocation().get(0));
+              ps.setString(2, restaurant.getLocations().get(0));
               ps.setString(3, restaurant.getCusine());
               ps.setString(4, restaurant.getPhone());
 
@@ -413,7 +467,7 @@ public class MyJDBC {
             String query = "UPDATE restaurant SET location = ?, cusine = ?, phone = ? WHERE restaurantName = ?";
             ps = c.prepareStatement(query);
 
-            ps.setString(1, restaurant.getLocation().get(0));
+            ps.setString(1, restaurant.getLocations().get(0));
             ps.setString(2, restaurant.getCusine());
             ps.setString(3, restaurant.getPhone());
             ps.setString(4, restaurant.getRestaurantName());
@@ -425,6 +479,7 @@ public class MyJDBC {
             System.out.println(e.getMessage());
         }
     }
+
     public void addBranchRestaurant(Restaurant restaurant,String  MoreLocation){//resturant
         Connection c=null;
         PreparedStatement ps= null;
@@ -440,8 +495,6 @@ public class MyJDBC {
             ps.executeUpdate();
             ps.close();
             c.close();
-
-
         }
         catch(Exception e){
             System.out.println( e.getMessage());

@@ -26,10 +26,22 @@ public class Admin extends Person{
 
         jdbc.insertRestaruants( restaurant);
 
-
-
+    }
+    public  Restaurant  GetestaurantData(String restaurantName) throws SQLException, ClassNotFoundException {
+            MyJDBC jdbc = MyJDBC.getInstance();
+             return jdbc.getRestaurantData(restaurantName);
 
     }
+
+    public  void UpdateRestaurant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
+        MyJDBC jdbc = MyJDBC.getInstance();
+        jdbc.updateRestaurant(restaurant);
+    }
+    public ArrayList<Restaurant> getallrestaurant() throws SQLException, ClassNotFoundException {
+        MyJDBC myJDBC = MyJDBC.getInstance();
+        return myJDBC.getAllRestaurants();
+    }
+
 
    /* public void update(Restaurant restaurant)throws SQLException, ClassNotFoundException{
 

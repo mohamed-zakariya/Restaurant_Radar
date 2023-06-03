@@ -49,7 +49,7 @@ public class AddResturanetForm {
     @FXML
     private Label checkCusine;
     @FXML
-    private Label checkPhone;
+    private Label checkPhone, label1;
 
 
 
@@ -57,12 +57,14 @@ public class AddResturanetForm {
 
     private Admin admin;
 
-    private boolean isPhotoDragged = false; // Flag to track if a photo is dragged
+    private boolean isPhotoDragged = false;
+    public Parent root;
 
     @FXML
-    public void setAdmin(Admin admin) {//3lashan 2rbt men form el 2wal w el gededa
+    public void setAdmin(Admin admin) {
         this.admin = admin;
-    }//login le el admin
+        label1.setText(admin.getUsername());
+    }
 
 
     @FXML
@@ -95,7 +97,7 @@ public class AddResturanetForm {
 
         if (!isPhotoDragged) {
             labeltocheck.setText("Please drag and drop a photo");
-            return; // Exit the method without adding the restaurant
+            return;
         }
 
         admin.AddResturant(restaurant);
@@ -113,7 +115,7 @@ public class AddResturanetForm {
         Dragboard dragboard = event.getDragboard();
         if (dragboard.hasFiles()) {
             event.acceptTransferModes(TransferMode.COPY);
-            isPhotoDragged = true; // Set the flag to true when files are dragged
+            isPhotoDragged = true;
         }
         event.consume();
     }
@@ -130,12 +132,12 @@ public class AddResturanetForm {
 
 
                 String restaurantName = NameText.getText();
-                String destinationPath = "C:\\Users\\DELL\\Desktop\\final project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurantName + ".jpg";
+                String destinationPath = "E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurantName + ".jpg";
 
                 try {
                     Files.copy(file.toPath(), Paths.get(destinationPath), StandardCopyOption.REPLACE_EXISTING);
                 } catch (IOException e) {
-                    // Handle the exception
+
                     e.printStackTrace();
                 }
             }
@@ -143,8 +145,38 @@ public class AddResturanetForm {
         }
         if (success) {
             labeltocheck.setText("Picture added");
-            ButtonText.setDisable(false); // Enable
-
+            ButtonText.setDisable(false);
         }
+    }
+    public void returnBack(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adminForm.fxml"));
+        root = fxmlLoader.load();
+
+        AdminForm adminForm = fxmlLoader.getController();
+        adminForm.setAdmin(admin);
+        adminForm.showData();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public void signOut(ActionEvent actionEvent) throws IOException {
+        Node n = (Node) actionEvent.getSource();
+        Stage closeWindow = (Stage) n.getScene().getWindow();
+        closeWindow.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginform.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 }

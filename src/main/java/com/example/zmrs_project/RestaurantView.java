@@ -52,11 +52,18 @@ public class RestaurantView {
     public void setUser(User user){ this.user = user;}
 
     public void showData() throws SQLException, ClassNotFoundException, IOException {
+        label1.setText("");
+        label2.setText("");
+        label3.setText("");
+        label5.setText("");
+        flowPane1.getChildren().clear();
+
+
         review = new Review(user, restaurant);
         rating.setRating(review.getRate(user, restaurant));
         label1.setText(label1.getText() + restaurant.getRestaurantName());
         label3.setText(Restaurant.getReviews(restaurant).size()+" reviews");
-        label5.setText(label5.getText()+restaurant.getLocationsOfRestaurant());
+        label5.setText(label5.getText()+restaurant.getLocationsOfRestaurant(new Restaurant(restaurant.getRestaurantName())));
         flowPane1.setPadding(new Insets(5,5,5,5));
         if(Restaurant.getReviews(restaurant).size() == 0){
             label2.setText(0+"");
@@ -77,26 +84,25 @@ public class RestaurantView {
 
 
                 if (user.getUsername().equals(review1.getUser().getUsername())){
-                    label.setText("You commented:\n" + commentText.toString());
+                    label.setText("You commented: \n" + commentText.toString());
                     }
                 else{
-                    label.setText(review1.getUser().getUsername() + " commented:\n" + commentText.toString());
+                    label.setText(review1.getUser().getUsername() + " commented: \n" + commentText.toString());
                 }
-
-
+                /*label.setText(label.getText()+"\t\t\t\t\t\t\t\t\t\t");*/
+                label.setPrefWidth(250);
                 label.setTextFill(Color.BLACK);
                 label.setStyle("-fx-background-color: #FACDAB; -fx-background-radius: 5;");
-
 
 
                 flowPane1.setVgap(10);
                 flowPane1.getChildren().addAll(label);
                 flowPane1.setVgap(10);
-
             }
         }
 
         imageView.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg"));
+
 
 
     }
@@ -158,10 +164,9 @@ public class RestaurantView {
         else {
         time =LocalDateTime.now();
         review.addcomment(user,restaurant,commentt,time);
-
+        showData();
 
         labelComment.setText("The comment added succsecfully");
-
 
         }
     }

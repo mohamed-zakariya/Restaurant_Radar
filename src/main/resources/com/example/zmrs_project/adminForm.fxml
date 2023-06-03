@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.AdminForm">
+<AnchorPane prefHeight="530.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.AdminForm">
    <children>
-      <Button fx:id="deleteButton" layoutX="393.0" layoutY="341.0" mnemonicParsing="false" onAction="#DELETE" text="delete" />
-      <Button fx:id="updateButton" layoutX="280.0" layoutY="341.0" mnemonicParsing="false" onAction="#UPDATAE" text="update" />
-      <Button fx:id="addButton" layoutX="158.0" layoutY="341.0" mnemonicParsing="false" onAction="#ADD" text="add" />
+      <ImageView fitHeight="570.0" fitWidth="572.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="60.0" layoutY="115.0" opacity="0.93" prefHeight="357.0" prefWidth="466.0" style="-fx-background-color: #3B3131; -fx-background-radius: 35;">
+         <children>
+            <Button fx:id="deleteButton" layoutX="308.0" layoutY="293.0" mnemonicParsing="false" onAction="#DELETE" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #faa443;" text="delete" textFill="WHITE" />
+            <Button fx:id="updateButton" layoutX="168.0" layoutY="293.0" mnemonicParsing="false" onAction="#UPDATAE" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #faa443;" text="update" textFill="WHITE" />
+            <Button fx:id="addButton" layoutX="28.0" layoutY="293.0" mnemonicParsing="false" onAction="#ADD" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #faa443;" text="add" textFill="WHITE" />
+            <TableView fx:id="tableView" editable="true" layoutX="60.0" layoutY="32.0" prefHeight="234.0" prefWidth="342.0">
+              <columns>
+                <TableColumn fx:id="col1" prefWidth="137.5999755859375" text="restaurantName" />
+                <TableColumn fx:id="col2" prefWidth="102.4000244140625" text="Cusine" />
+                  <TableColumn fx:id="col3" prefWidth="100.0" text="location" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="1.0" opacity="0.93" prefHeight="70.0" prefWidth="570.0" style="-fx-background-color: #3B3131; -fx-background-radius: 25;">
+         <children>
+            <Label fx:id="label1" layoutX="253.0" layoutY="21.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="480.0" layoutY="17.0" mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Signout" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SIGN_OUT" layoutX="476.0" layoutY="41.0" size="25" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

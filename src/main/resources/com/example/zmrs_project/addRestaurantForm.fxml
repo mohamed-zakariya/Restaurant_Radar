@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.AddResturanetForm">
+<children>
+      <ImageView fitHeight="618.0" fitWidth="601.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/2.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="20.0" layoutY="122.0" opacity="0.93" prefHeight="399.0" prefWidth="566.0" style="-fx-background-color: #3B3131; -fx-background-radius: 35;">
+         <children>
+          <VBox fx:id="imageContainer" layoutX="411.0" layoutY="108.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="166.0" prefWidth="131.0" style="-fx-border-color: blue;">
+        <!-- Add any existing images here -->
+    </VBox>
+      
+          <TextField fx:id="LocationText" layoutX="185.0" layoutY="176.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+          <TextField fx:id="CusineText" layoutX="185.0" layoutY="238.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+          <TextField fx:id="NameText" layoutX="185.0" layoutY="116.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+      
+          <Label contentDisplay="TOP" graphicTextGap="25.0" layoutX="213.0" layoutY="28.0" style="-fx-font-size: 29px;" text="Resturant" textFill="WHITE" />
+      
+          <Label layoutX="73.0" layoutY="120.0" prefHeight="16.0" prefWidth="44.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Name" textFill="WHITE" />
+          <Label layoutX="67.0" layoutY="178.0" prefHeight="26.0" prefWidth="74.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Location" textFill="WHITE" />
+          <Label fx:id="Cusine" layoutX="76.0" layoutY="243.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Cusine" textFill="WHITE" />
+      
+          <Button fx:id="ButtonText" layoutX="376.0" layoutY="317.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="172.0" style="-fx-background-color: #faa443;" text="Add" textFill="WHITE" />
+      
+          <TextField fx:id="phoneText" layoutX="185.0" layoutY="299.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+      
+          <Label layoutX="73.0" layoutY="303.0" prefHeight="18.0" prefWidth="44.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Phone" textFill="WHITE" />
+            <Label fx:id="labeltocheck" layoutX="414.0" layoutY="276.0" prefHeight="18.0" prefWidth="150.0" textFill="#ea0000" />
+            <Label layoutX="436.0" layoutY="73.0" text="Add the photo " textFill="WHITE" />
+            <Label fx:id="checckName" layoutX="176.0" layoutY="147.0" prefHeight="18.0" prefWidth="150.0" textFill="#df0707" />
+            <Label fx:id="checkLocation" layoutX="176.0" layoutY="203.0" prefHeight="18.0" prefWidth="150.0" textFill="#df0707" />
+            <Label fx:id="checkCusine" layoutX="176.0" layoutY="276.0" prefHeight="18.0" prefWidth="150.0" textFill="#df0707" />
+            <Label fx:id="checkPhone" layoutX="176.0" layoutY="331.0" prefHeight="18.0" prefWidth="150.0" textFill="#df0707" />
+            <FontAwesomeIconView disable="true" fill="WHITE" glyphName="ARROW_RIGHT" layoutX="507.0" layoutY="36.0" size="25" />
+            <Button layoutX="506.0" layoutY="15.0" mnemonicParsing="false" onAction="#returnBack" prefHeight="26.0" prefWidth="23.0" style="-fx-background-color: transapernt;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="16.0" layoutY="14.0" opacity="0.93" prefHeight="70.0" prefWidth="570.0" style="-fx-background-color: #3B3131; -fx-background-radius: 25;">
+         <children>
+            <Label fx:id="label1" layoutX="253.0" layoutY="21.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="480.0" layoutY="17.0" mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Signout" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SIGN_OUT" layoutX="476.0" layoutY="41.0" size="25" />
+         </children>
+      </AnchorPane>
+</children>
+</AnchorPane>
