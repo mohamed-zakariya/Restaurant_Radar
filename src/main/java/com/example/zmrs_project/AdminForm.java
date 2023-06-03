@@ -25,7 +25,7 @@ public class AdminForm {
     @FXML
     public Parent root;
     private Admin admin;
-    @FXML
+
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
@@ -57,12 +57,13 @@ public class AdminForm {
         Stage closeWindow = (Stage) n.getScene().getWindow();
         closeWindow.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addResturanetForm.fxml"));//3lashan neft7 safha tanya
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("UpdateResturnatForm.fxml"));//3lashan neft7 safha tanya
         root = fxmlLoader.load();//el makn el ana wa2f feh
-        AddResturanetForm addResturanetForm= fxmlLoader.getController();
+        UpdateResturnatForm updateResturnatForm= fxmlLoader.getController();
 
 
-        addResturanetForm.setAdmin(admin);
+
+        updateResturnatForm.setAdmin(admin);
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);

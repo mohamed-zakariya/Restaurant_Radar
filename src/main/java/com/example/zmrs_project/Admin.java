@@ -30,6 +30,17 @@ public class Admin extends Person{
 
 
     }
+    public  Restaurant  GetestaurantData(String restaurantName) throws SQLException, ClassNotFoundException {
+            MyJDBC jdbc = MyJDBC.getInstance();
+             return jdbc.getRestaurantData(restaurantName);
+
+    }
+
+    public  void UpdateRestaurant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
+        MyJDBC jdbc = MyJDBC.getInstance();
+        jdbc.updateRestaurant(restaurant);
+    }
+
 
    /* public void update(Restaurant restaurant)throws SQLException, ClassNotFoundException{
 

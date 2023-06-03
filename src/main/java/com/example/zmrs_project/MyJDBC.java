@@ -10,9 +10,9 @@ import java.util.Set;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/zmrs";
+    String url = "jdbc:mysql://localhost:3306/try";
     String user = "root";
-    String password = "_Seif_2001";
+    String password = "Radwan123456";
     LocalDateTime Time ;
     MyJDBC()throws SQLException{
         try {
@@ -381,6 +381,37 @@ public class MyJDBC {
             }
         }
 
+    public Restaurant getRestaurantData(String restaurantName){
+        Connection c = null;
+        Statement st = null;
+        Restaurant restaurant;
+        try {
+            c = this.getConnection();
+            st = c.createStatement();
+            ResultSet resultSet = st.executeQuery("select * from restaurant");
+            while (resultSet.next()){
+                if(resultSet.getString("restaurantName").equals(restaurantName)){
+
+                    String name = resultSet.getString("restaurantName");
+                    String cusine = resultSet.getString("cusine");
+                    String location = resultSet.getString("location");
+                    String phone = resultSet.getString("phone");
+                    ArrayList<String> locations = new ArrayList<>();
+                    locations.add(location);
+
+                    restaurant = new Restaurant(name,locations,cusine,phone);
+
+                    return restaurant;
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+
       //Admin functiouns
       public void insertRestaruants(Restaurant restaurant) throws SQLException {
           Connection c = null;
@@ -424,6 +455,7 @@ public class MyJDBC {
             System.out.println(e.getMessage());
         }
     }
+
     public void addBranchRestaurant(Restaurant restaurant,String  MoreLocation){//resturant
         Connection c=null;
         PreparedStatement ps= null;
@@ -439,8 +471,6 @@ public class MyJDBC {
             ps.executeUpdate();
             ps.close();
             c.close();
-
-
         }
         catch(Exception e){
             System.out.println( e.getMessage());

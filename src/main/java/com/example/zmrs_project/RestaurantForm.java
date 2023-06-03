@@ -49,7 +49,7 @@ public class RestaurantForm {
 
         label1.setText(label1.getText() + restaurant.getRestaurantName());
         label2.setText(label2.getText() + location);
-        Image image = new Image("C:\\Users\\DELL\\Desktop\\final project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
+        Image image = new Image("E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);
     }
         public void getRestaurantSlideRestaurant() throws MalformedURLException, SQLException, ClassNotFoundException {
@@ -64,7 +64,7 @@ public class RestaurantForm {
         label1.setText(label1.getText() + restaurant.getRestaurantName());
         label2.setText("Location:" + restaurant.getLocationsOfRestaurant());
 
-        Image image = new Image("C:\\Users\\DELL\\Desktop\\final project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
+        Image image = new Image("E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\"+restaurant.getRestaurantName()+".jpg");
         imageView1.setImage(image);
     }
     @FXML
