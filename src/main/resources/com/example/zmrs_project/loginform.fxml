@@ -36,7 +36,7 @@
             <FontAwesomeIconView fill="#faa443" glyphName="USERS" layoutX="161.0" layoutY="95.0" size="30" text="" />
             <Hyperlink layoutX="191.0" layoutY="356.0" onAction="#CreateForm" text="Create an account" textFill="#e11c1c" />
             <Label layoutX="69.0" layoutY="359.0" text="Don't have an account?" textFill="WHITE" />
-            <Label fx:id="label1" layoutX="87.0" layoutY="287.0" prefHeight="18.0" prefWidth="181.0" textFill="#df3a3a">
+            <Label fx:id="label1" layoutX="94.0" layoutY="277.0" prefHeight="18.0" prefWidth="181.0" textFill="#df3a3a">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>

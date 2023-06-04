@@ -21,7 +21,7 @@
             <Image url="@images/2.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="39.0" layoutY="28.0" opacity="0.94" prefHeight="591.0" prefWidth="566.0" style="-fx-background-color: #3B3131; -fx-background-radius: 50;">
+      <AnchorPane layoutX="39.0" layoutY="28.0" opacity="0.94" prefHeight="597.0" prefWidth="566.0" style="-fx-background-color: #3B3131; -fx-background-radius: 50;">
          <children>
             <Label fx:id="label1" layoutX="178.0" layoutY="10.0" text="Restaurant: " textFill="WHITE">
                <font>
@@ -53,7 +53,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="label4" layoutX="178.0" layoutY="425.0" prefHeight="18.0" prefWidth="156.0" textFill="#e44d4d" />
+            <Label fx:id="label4" layoutX="178.0" layoutY="424.0" prefHeight="18.0" prefWidth="156.0" textFill="#e44d4d" />
             <Label fx:id="label2" layoutX="220.0" layoutY="247.0" prefHeight="35.0" prefWidth="36.0" text="3.5" textFill="WHITE">
                <font>
                   <Font size="24.0" />
@@ -71,18 +71,18 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="121.0" layoutY="434.0" prefHeight="71.0" prefWidth="270.0">
+            <ScrollPane layoutX="121.0" layoutY="446.0" prefHeight="71.0" prefWidth="270.0">
                <content>
                   <FlowPane fx:id="flowPane1" prefHeight="64.0" prefWidth="262.0" />
                </content>
             </ScrollPane>
-            <TextField fx:id="textField1" layoutX="118.0" layoutY="525.0" prefHeight="26.0" prefWidth="214.0" />
-            <Button layoutX="415.0" layoutY="529.0" mnemonicParsing="false" onAction="#addComment" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #faa443; -fx-background-radius: 0;" text="Add comment" textFill="WHITE">
+            <TextField fx:id="textField1" layoutX="145.0" layoutY="537.0" prefHeight="26.0" prefWidth="214.0" />
+            <Button layoutX="415.0" layoutY="536.0" mnemonicParsing="false" onAction="#addComment" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #faa443; -fx-background-radius: 0;" text="Add comment" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="labelComment" layoutX="116.0" layoutY="555.0" prefHeight="18.0" prefWidth="208.0" textFill="#d90000" />
+            <Label fx:id="labelComment" layoutX="151.0" layoutY="568.0" prefHeight="18.0" prefWidth="208.0" textFill="#d90000" />
          </children>
       </AnchorPane>
       <Button layoutX="32.0" layoutY="5.0" mnemonicParsing="false" onAction="#returnBack" opacity="0.0" prefHeight="26.0" prefWidth="36.0">
