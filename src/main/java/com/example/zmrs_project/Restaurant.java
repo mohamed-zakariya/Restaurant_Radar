@@ -10,30 +10,13 @@ public class Restaurant implements Cusine{
     private String location;
     private String cusine;
     private String phone;
+
+    private Menu menu;
+
+
     private Double avgRate = (double) 0;
 
     private static ArrayList<Review> restaurantReviews;
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-    public String getPhone(){return phone;}
-
-
-    public ArrayList<String> getLocationsOfRestaurant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
-        MyJDBC myJDBC = MyJDBC.getInstance();
-        return locations = myJDBC.getRestaurantBranches(this);
-    }
-    public ArrayList<String> getLocations(){
-        return locations;
-    }
-
-    public String getCusine() {
-        return cusine;
-    }
-    public String getLocation(){
-        return location;
-    }
 
     public Restaurant(){
 
@@ -68,6 +51,32 @@ public class Restaurant implements Cusine{
         this.location = location;
         this.cusine = cusine;
     }
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+    public String getPhone(){return phone;}
+    public Menu getMenu() {
+        return menu;
+    }
+    public String getCusine() {
+        return cusine;
+    }
+    public String getLocation(){
+        return location;
+    }
+    public ArrayList<String> getLocations(){
+        return locations;
+    }
+
+
+    public ArrayList<String> getLocationsOfRestaurant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
+        MyJDBC myJDBC = MyJDBC.getInstance();
+        return locations = myJDBC.getRestaurantBranches(this);
+    }
+
+
+
+
     public  void setReview(){
 
     }

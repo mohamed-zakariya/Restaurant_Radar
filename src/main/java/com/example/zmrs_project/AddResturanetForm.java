@@ -104,7 +104,7 @@ public class AddResturanetForm {
             return;
         }
 
-        admin.AddResturant(restaurant);
+        admin.add(restaurant);
         ButtonText.setDisable(true);
         labeltocheck.setText("");
         NameText.clear();

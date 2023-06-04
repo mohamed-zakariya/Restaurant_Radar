@@ -13,15 +13,9 @@ public class Review {
 
     private ArrayList<String> comment ;
 
-    private String COMMENT;
 
     public Review(User user, Restaurant restaurant){
         this.user = user;
-        this.restaurant = restaurant;
-    }
-    public Review(User user, Double rate, Restaurant restaurant){
-        this.user = user;
-        this.rate = rate;
         this.restaurant = restaurant;
     }
     public Review(User user, Double rate, Restaurant restaurant,ArrayList<String> comment ){

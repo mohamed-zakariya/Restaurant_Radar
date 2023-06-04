@@ -65,7 +65,7 @@ public class UserForm {
         else{
             Location location = Location.getResturantsLocation(textfield1.getText());
 
-            ArrayList<Restaurant> restaurants = location.getResturants();
+            ArrayList<Restaurant> restaurants = location.getRestaurants();
 
             flowPane1.setHgap(10);
             flowPane1.setVgap(10);

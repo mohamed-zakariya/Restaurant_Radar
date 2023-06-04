@@ -5,8 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,24 +28,36 @@ public class CreateuserForm {
 
     @FXML
     public void create1(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
-        Node n = (Node) actionEvent.getSource();
-        Stage closeWindow = (Stage) n.getScene().getWindow();
 
-        closeWindow.close();
-        User user1 = new User();
-        user1 = user1.create(username_text.getText(), password_text.getText(),email_text.getText());
+        JunitTest test = new JunitTest();
+        if(!test.testEmailFormat(email_text.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("error");
+            alert.setHeaderText(null);
+            alert.setContentText("please enter the email in the right format");
+            alert.showAndWait();
+        }
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
-        root = fxmlLoader.load();
+        else{
+            Node n = (Node) actionEvent.getSource();
+            Stage closeWindow = (Stage) n.getScene().getWindow();
+            closeWindow.close();
 
-        UserForm userForm = fxmlLoader.getController();
-        userForm.setUser(user1);
+            User user1 = new User();
+            user1 = user1.create(username_text.getText(), password_text.getText(),email_text.getText());
 
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-        stage.setTitle("User!");
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));
+            root = fxmlLoader.load();
+
+            UserForm userForm = fxmlLoader.getController();
+            userForm.setUser(user1);
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setTitle("User!");
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     @FXML
     public void returnBack(ActionEvent actionEvent) throws IOException {

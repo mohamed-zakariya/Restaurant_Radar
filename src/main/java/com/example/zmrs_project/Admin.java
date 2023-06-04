@@ -21,12 +21,13 @@ public class Admin extends Person{
         super(username,password);
     }
 
-    public static  void   AddResturant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
+    public static  void   add(Restaurant restaurant) throws SQLException, ClassNotFoundException {
         MyJDBC jdbc = MyJDBC.getInstance();
 
         jdbc.insertRestaruants( restaurant);
 
     }
+
     public  Restaurant  GetestaurantData(String restaurantName) throws SQLException, ClassNotFoundException {
             MyJDBC jdbc = MyJDBC.getInstance();
              return jdbc.getRestaurantData(restaurantName);

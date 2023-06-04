@@ -9,7 +9,7 @@ public class Location {
 
     public ArrayList<Restaurant> restaurants = new ArrayList<>();
 
-    public ArrayList<Restaurant> getResturants() {
+    public ArrayList<Restaurant> getRestaurants() {
         return restaurants;
     }
 
