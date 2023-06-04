@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.paint.Color?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zmrs_project.AddResturanetForm">
 <children>
       <ImageView fitHeight="618.0" fitWidth="601.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
@@ -21,19 +20,19 @@
       </ImageView>
       <AnchorPane layoutX="20.0" layoutY="122.0" opacity="0.93" prefHeight="399.0" prefWidth="566.0" style="-fx-background-color: #3B3131; -fx-background-radius: 35;">
          <children>
-          <VBox fx:id="imageContainer" layoutX="411.0" layoutY="108.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="166.0" prefWidth="131.0" style="-fx-border-color: blue;">
+          <VBox fx:id="imageContainer" layoutX="397.0" layoutY="108.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="166.0" prefWidth="131.0" style="-fx-border-color: white;">
         <!-- Add any existing images here -->
     </VBox>
       
-          <TextField fx:id="LocationText" layoutX="185.0" layoutY="176.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
-          <TextField fx:id="CusineText" layoutX="185.0" layoutY="238.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
-          <TextField fx:id="NameText" layoutX="185.0" layoutY="116.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+          <TextField fx:id="LocationText" layoutX="163.0" layoutY="176.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+          <TextField fx:id="CusineText" layoutX="163.0" layoutY="238.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+          <TextField fx:id="NameText" layoutX="163.0" layoutY="116.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
       
           <Label contentDisplay="TOP" graphicTextGap="25.0" layoutX="213.0" layoutY="28.0" style="-fx-font-size: 29px;" text="Resturant" textFill="WHITE" />
       
-          <Label layoutX="73.0" layoutY="120.0" prefHeight="16.0" prefWidth="44.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Name" textFill="WHITE" />
-          <Label layoutX="67.0" layoutY="178.0" prefHeight="26.0" prefWidth="74.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Location" textFill="WHITE" />
-          <Label fx:id="Cusine" layoutX="76.0" layoutY="243.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Cusine" textFill="WHITE" />
+          <Label layoutX="67.0" layoutY="120.0" prefHeight="16.0" prefWidth="44.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Name" textFill="WHITE" />
+          <Label layoutX="61.0" layoutY="178.0" prefHeight="26.0" prefWidth="74.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Location" textFill="WHITE" />
+          <Label fx:id="Cusine" layoutX="70.0" layoutY="243.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Cusine" textFill="WHITE" />
 
              <Button fx:id="ButtonText" layoutX="376.0" layoutY="317.0" mnemonicParsing="false" onAction="#onClick" prefHeight="30.0" prefWidth="172.0">
                  <style>
@@ -44,9 +43,9 @@
              </Button>
 
 
-             <TextField fx:id="phoneText" layoutX="185.0" layoutY="299.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
+             <TextField fx:id="phoneText" layoutX="163.0" layoutY="299.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" />
       
-          <Label layoutX="73.0" layoutY="303.0" prefHeight="18.0" prefWidth="44.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Phone" textFill="WHITE" />
+          <Label layoutX="67.0" layoutY="303.0" prefHeight="18.0" prefWidth="44.0" style="-fx-font-size: 14px; -fx-font-family: 'Arial';" text="Phone" textFill="WHITE" />
             <Label fx:id="labeltocheck" layoutX="414.0" layoutY="276.0" prefHeight="18.0" prefWidth="150.0" textFill="#ea0000" />
             <Label layoutX="436.0" layoutY="73.0" text="Add the photo " textFill="WHITE" />
             <Label fx:id="checckName" layoutX="176.0" layoutY="147.0" prefHeight="18.0" prefWidth="150.0" textFill="#df0707" />

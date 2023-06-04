@@ -91,7 +91,7 @@ public class UpdateResturnatForm {
             labelphone.setText("Phone Number : " + restaurant.getPhone());
             labelLocation.setText("Location: " + restaurant.getLocationsOfRestaurant(new Restaurant(restaurant.getRestaurantName())));
 
-            Image image = new Image("E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurant.getRestaurantName() + ".jpg");
+            Image image = new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurant.getRestaurantName() + ".jpg");
             imageView1.setImage(image);
             return restaurant;
             }

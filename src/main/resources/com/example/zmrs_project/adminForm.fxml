@@ -18,7 +18,7 @@
             <Image url="@images/2.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="60.0" layoutY="115.0" opacity="0.93" prefHeight="357.0" prefWidth="466.0" style="-fx-background-color: #3B3131; -fx-background-radius: 35;">
+      <AnchorPane layoutX="60.0" layoutY="123.0" opacity="0.93" prefHeight="357.0" prefWidth="466.0" style="-fx-background-color: #3B3131; -fx-background-radius: 35;">
          <children>
             <Button fx:id="deleteButton" layoutX="308.0" layoutY="293.0" mnemonicParsing="false" onAction="#DELETE" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #faa443;" text="delete" textFill="WHITE" />
             <Button fx:id="updateButton" layoutX="168.0" layoutY="293.0" mnemonicParsing="false" onAction="#UPDATAE" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #faa443;" text="update" textFill="WHITE" />
