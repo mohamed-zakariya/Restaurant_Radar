@@ -34,8 +34,6 @@ public class Loginform {
         Person p = Person.login(textField1.getText(), textField2.getText());
         if(p instanceof User){
             System.out.println(((User) p).getVisitors());
-           // System.out.println(((User) p).getReviews().get(2).getComment());
-            //System.out.println(((User) p).getReviews().get(4).getComment());
             closeWindow.close();
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("userForm.fxml"));

@@ -137,7 +137,7 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="206.0">
+                        <HBox fx:id="hbox1" alignment="CENTER" prefHeight="52.0" prefWidth="211.0">
                            <children>
                               <FontAwesomeIconView fill="#faa443" glyphName="HOME" size="20">
                                  <HBox.margin>
@@ -154,7 +154,7 @@
                               </Button>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="233.0" prefHeight="52.0" prefWidth="200.0">
+                        <HBox fx:id="hbox2" alignment="CENTER" layoutX="10.0" layoutY="233.0" prefHeight="52.0" prefWidth="200.0">
                            <children>
                               <FontAwesomeIconView fill="#faa443" glyphName="CALENDAR" size="20">
                                  <HBox.margin>

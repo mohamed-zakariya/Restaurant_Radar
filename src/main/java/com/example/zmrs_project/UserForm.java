@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,6 +45,9 @@ public class UserForm {
     FlowPane flowPane1;
     @FXML
     BorderPane borderPane;
+    @FXML
+    HBox hbox1, hbox2;
+
     VBox vboxTemp;
 
     public UserForm(){
@@ -52,9 +56,11 @@ public class UserForm {
     @FXML
     public void setUser(User user){
         this.user = user;
-
+        hbox1.setStyle("-fx-background-color: brown;");
+        hbox2.setStyle("-fx-background-color: #3B3131;");
         label2.setText(user.getUsername());
     }
+
     @FXML
     public void search() throws SQLException, ClassNotFoundException, IOException {
         flowPane1.getChildren().clear();
@@ -105,11 +111,15 @@ public class UserForm {
     @FXML
     public void Home(){
         borderPane.setCenter(anchorPane2);
+        hbox1.setStyle("-fx-background-color: brown;");
+        hbox2.setStyle("-fx-background-color: #3B3131;");
     }
 
 
     @FXML
     public void  OpenCusineForm(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
+        hbox1.setStyle("-fx-background-color: #3B3131;");
+        hbox2.setStyle("-fx-background-color: #3B3131;");
 
         Button button = (Button) actionEvent.getSource();
         String buttontext = button.getText();
@@ -153,6 +163,8 @@ public class UserForm {
 
     @FXML
     public void reviwHistory(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
+        hbox1.setStyle("-fx-background-color: #3B3131;");
+        hbox2.setStyle("-fx-background-color: brown;");
         Button button = (Button) actionEvent.getSource();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("reviwHistoryForm.fxml"));
