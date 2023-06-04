@@ -1,11 +1,10 @@
-package com.example.zmrs_project;
+package com.example.zmrs_project.classes;
 
 
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Set;
 
 public class MyJDBC {
     private static MyJDBC jdbc;

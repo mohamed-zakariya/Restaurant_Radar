@@ -1,5 +1,8 @@
 package com.example.zmrs_project;
 
+import com.example.zmrs_project.classes.Admin;
+import com.example.zmrs_project.classes.Person;
+import com.example.zmrs_project.classes.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

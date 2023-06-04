@@ -1,9 +1,9 @@
-package com.example.zmrs_project;
+package com.example.zmrs_project.classes;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Restaurant implements Cusine{
+public class Restaurant implements Cusine {
 
     private String restaurantName;
     private ArrayList<String> locations;
@@ -17,6 +17,8 @@ public class Restaurant implements Cusine{
     private Double avgRate = (double) 0;
 
     private static ArrayList<Review> restaurantReviews;
+
+
 
     public Restaurant(){
 
@@ -109,5 +111,10 @@ public class Restaurant implements Cusine{
 
         return jdbc. getCusineRestaurant(cusine);
     }
+
+    public void setLocationsOfRestaurant(MyJDBC myJDBC) throws SQLException, ClassNotFoundException {
+        locations = myJDBC.getRestaurantBranches(this);
+    }
+
 
 }

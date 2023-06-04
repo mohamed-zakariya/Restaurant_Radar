@@ -1,5 +1,7 @@
 package com.example.zmrs_project;
 
+import com.example.zmrs_project.classes.Admin;
+import com.example.zmrs_project.classes.Restaurant;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

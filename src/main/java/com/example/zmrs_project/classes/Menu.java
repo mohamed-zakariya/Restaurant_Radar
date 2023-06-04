@@ -1,8 +1,7 @@
-package com.example.zmrs_project;
+package com.example.zmrs_project.classes;
 
+import com.example.zmrs_project.classes.Restaurant;
 import javafx.scene.image.Image;
-
-import java.io.File;
 
 public class Menu {
 

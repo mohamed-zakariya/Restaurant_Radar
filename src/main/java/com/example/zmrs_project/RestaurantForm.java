@@ -1,5 +1,7 @@
 package com.example.zmrs_project;
 
+import com.example.zmrs_project.classes.Restaurant;
+import com.example.zmrs_project.classes.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +18,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import java.net.URL;
 import java.sql.SQLException;
 
 public class RestaurantForm {

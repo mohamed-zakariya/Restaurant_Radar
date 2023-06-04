@@ -1,8 +1,9 @@
 package com.example.zmrs_project;
 
+import com.example.zmrs_project.classes.Admin;
+import com.example.zmrs_project.classes.Restaurant;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -24,8 +25,6 @@ import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.paint.Color;
-
 
 
 public class AddResturanetForm {

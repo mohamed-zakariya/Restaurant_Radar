@@ -1,11 +1,9 @@
-package com.example.zmrs_project;
+package com.example.zmrs_project.classes;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Admin extends Person{
+public class Admin extends Person {
     private ArrayList<Location> locationResturants = new ArrayList<Location>();
     private ArrayList<Restaurant> RestaurantArrayList= new ArrayList<Restaurant>();
 

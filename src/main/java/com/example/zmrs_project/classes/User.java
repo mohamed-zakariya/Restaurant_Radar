@@ -1,10 +1,9 @@
-package com.example.zmrs_project;
+package com.example.zmrs_project.classes;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class User extends Person{
+public class User extends Person {
     private String email;
     private static int visitors;
 

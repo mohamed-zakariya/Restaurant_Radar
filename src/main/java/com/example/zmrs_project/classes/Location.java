@@ -1,4 +1,4 @@
-package com.example.zmrs_project;
+package com.example.zmrs_project.classes;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

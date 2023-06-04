@@ -1,5 +1,9 @@
 package com.example.zmrs_project;
 
+import com.example.zmrs_project.classes.Location;
+import com.example.zmrs_project.classes.Restaurant;
+import com.example.zmrs_project.classes.User;
+import com.example.zmrs_project.test.JunitTest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +12,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -19,8 +24,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.concurrent.Flow;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class UserForm {
 
@@ -57,12 +60,21 @@ public class UserForm {
         flowPane1.getChildren().clear();
         flowPane1.setPadding(new Insets(0,0,0,0));
         if(textfield1.getText().equals("")){
-            imageView1.setImage(new Image("E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\images\\1.jpg"));
+            imageView1.setImage(new Image("D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\images\\1.jpg"));
             flowPane1.getChildren().add(imageView1);
             flowPane1.setPadding(new Insets(0,175,0,0));
 
         }
         else{
+            JunitTest junitTest = new JunitTest();
+            if(!junitTest.isLettersOnly(textfield1.getText())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("error");
+                alert.setHeaderText(null);
+                alert.setContentText("please enter the search in a right format");
+                alert.showAndWait();
+            }
+
             Location location = Location.getResturantsLocation(textfield1.getText());
 
             ArrayList<Restaurant> restaurants = location.getRestaurants();
