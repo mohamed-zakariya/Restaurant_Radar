@@ -20,6 +20,7 @@ public class Restaurant implements Cusine{
     public String getPhone(){return phone;}
 
 
+
     public ArrayList<String> getLocationsOfRestaurant(Restaurant restaurant) throws SQLException, ClassNotFoundException {
         MyJDBC myJDBC = MyJDBC.getInstance();
         return locations = myJDBC.getRestaurantBranches(this);
@@ -100,5 +101,11 @@ public class Restaurant implements Cusine{
 
         return jdbc. getCusineRestaurant(cusine);
     }
+
+
+    public void setLocationsOfRestaurant(MyJDBC myJDBC) throws SQLException, ClassNotFoundException {
+        locations = myJDBC.getRestaurantBranches(this);
+    }
+
 
 }

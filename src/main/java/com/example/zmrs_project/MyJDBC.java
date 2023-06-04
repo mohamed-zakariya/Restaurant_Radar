@@ -10,9 +10,9 @@ import java.util.Set;
 public class MyJDBC {
     private static MyJDBC jdbc;
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/login";
+    String url = "jdbc:mysql://localhost:3306/try";
     String user = "root";
-    String password = "Mhdzikoo@123";
+    String password = "Radwan123456";
 
     LocalDateTime Time ;
     MyJDBC()throws SQLException{

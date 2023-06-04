@@ -10,7 +10,7 @@ public class Menu {
     private static Image juiceHotDrinks;
     private static Image mainplates;
 
-    public static String path ="D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Menu\\";
+    public static String path ="E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Menu\\";
 
 public  Menu (){
 
