@@ -20,7 +20,7 @@ To install MySQL, follow these steps:
 1. Navigate to the test folder in the project directory.
 2. Run the tests using the TestRunner.java file.
 ## UML Diagram
-[UML_DIagram](https://github.com/mohamed-zakariya/ZMRS_System/files/11655029/ZMRS.System.-.Page.1.pdf)
+[UML_Diagram](https://github.com/mohamed-zakariya/ZMRS_System/files/11655029/ZMRS.System.-.Page.1.pdf)
 
 ## User interface
 
