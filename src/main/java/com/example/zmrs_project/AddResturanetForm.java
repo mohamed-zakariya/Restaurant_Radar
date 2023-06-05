@@ -135,7 +135,7 @@ public class AddResturanetForm {
 
 
                 String restaurantName = NameText.getText();
-                String destinationPath = "E:\\6 term\\OOP\\project_zmrs_3\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurantName + ".jpg";
+                String destinationPath = "D:\\Java\\Project\\ZMRS_System\\src\\main\\resources\\com\\example\\zmrs_project\\Restaurants\\" + restaurantName + ".jpg";
 
                 try {
                     Files.copy(file.toPath(), Paths.get(destinationPath), StandardCopyOption.REPLACE_EXISTING);
