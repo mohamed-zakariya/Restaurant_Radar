@@ -19,9 +19,14 @@ To install MySQL, follow these steps:
     To run the JUnit tests for ZMRS System, follow these steps:
 1. Navigate to the test folder in the project directory.
 2. Run the tests using the TestRunner.java file.
+## UML Diagram
+
 ## User interface
+[UML_DIagram](https://github.com/mohamed-zakariya/ZMRS_System/files/11655029/ZMRS.System.-.Page.1.pdf)
 
 https://github.com/mohamed-zakariya/ZMRS_System/assets/113525757/66933335-c5d1-487f-b825-8c20f57b2531
 ## Admin interface
 https://github.com/mohamed-zakariya/ZMRS_System/assets/113525757/dfad6e79-87e8-492a-a78c-e11df82c81dc
+## Report
+[report](https://github.com/mohamed-zakariya/ZMRS_System/files/11655015/ZMRS_report.pdf)
 
