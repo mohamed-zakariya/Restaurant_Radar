@@ -1,5 +1,5 @@
-# ZMRS_System
-ZMRS System is a JavaFX application that allows users to search for the nearest restaurant and choose their preferred type of food.
+# Restaurant_Radar
+Restaurand Radar is a System of JavaFX application that allows users to search for nearby restaurants and view detailed information about each restaurant, such as menus, photos, reviews, and ratings.
 ## Purpose
 The purpose of ZMRS System is to provide an easy-to-use tool for finding restaurants based on location and food preferences. Many people struggle with finding restaurants that match their dietary restrictions, and ZMRS System aims to simplify this process.
 ## Installation
